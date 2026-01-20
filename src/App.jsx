@@ -1,40 +1,55 @@
-import { useState } from 'react';
-import './App.css';
-import Header from './components/Header';
-import Aside from './components/Aside';
-import Main from './components/Main';
-import Footer from './components/Footer';
+import { useState } from "react";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import Header from "./components/Header";
+import Aside from "./components/Aside";
+import Home from "./pages/Home";
+import Projects from "./pages/Projects";
+import ProjectDetailPage from "./pages/ProjectDetailPage";
+import About from "./pages/About";
 
-const App = () => {
+function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
-  const closeSidebar = () => setIsSidebarOpen(false);
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
 
-  const menuItems = ['Меню_1', 'Меню_2', 'Меню_3', 'Меню_4', 'Меню_5'];
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
-      {/* Header */}
-      <Header toggleSidebar={toggleSidebar} menuItems={menuItems} />
-      {/* Основной макет: сайдбар + контент */}
-      <div className="flex flex-1">
-        {/* LeftSide (Сайдбар) — пункты меню на малых экранах */}
-        <Aside isSidebarOpen={isSidebarOpen} closeSidebar={closeSidebar} menuItems={menuItems} />
-        {/* Overlay при открытом меню */}
-        {isSidebarOpen && (
-          <div
-            className="fixed inset-0 bg-black bg-opacity-50 z-30 lg:hidden"
-            onClick={closeSidebar}
-          ></div>
-        )}
-        {/* Main */}
-        <Main />
+    <BrowserRouter>
+      <div className="min-h-screen flex flex-col">
+        <Header
+          toggleMobileMenu={toggleSidebar}
+        />
+        <Aside
+          isSidebarOpen={isSidebarOpen}
+          closeSidebar={closeSidebar}
+        />
+        <div className="flex-1">
+          <main className="py-6 md:py-8 bg-gray-50 min-h-screen">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <Routes>
+                <Route path="/home" element={<Home />} />
+                <Route path="/projects" element={<Projects />} />
+                <Route path="/project/:id" element={<ProjectDetailPage />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<About />} /> {/* Используем About как заглушку */}
+                <Route path="/" element={<Home />} />
+              </Routes>
+            </div>
+          </main>
+        </div>
+        <footer className="bg-white border-t-2 border-gray-300 p-4 md:p-6 text-center text-sm md:text-base text-gray-600">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            © 2025 RS-SOFT.RU. Все права защищены.
+          </div>
+        </footer>
       </div>
-      {/* Footer */}
-      <Footer />
-    </div>
+    </BrowserRouter>
   );
-};
+}
 
 export default App;
