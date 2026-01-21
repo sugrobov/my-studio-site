@@ -1,16 +1,17 @@
-import { useState } from "react";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
-import Header from "./components/Header";
-import Aside from "./components/Aside";
-import Home from "./pages/Home";
-import Projects from "./pages/Projects";
-import ProjectDetailPage from "./pages/ProjectDetailPage";
-import About from "./pages/About";
+import { Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import Aside from './components/Aside';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import Projects from './pages/Projects';
+import About from './pages/About';
+import ProjectDetailPage from './pages/ProjectDetailPage';
+import { useState } from 'react';
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  const toggleSidebar = () => {
+  const toggleMobileMenu = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
@@ -19,35 +20,25 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
-      <div className="min-h-screen flex flex-col">
-        <Header
-          toggleMobileMenu={toggleSidebar}
-        />
-        <Aside
-          isSidebarOpen={isSidebarOpen}
-          closeSidebar={closeSidebar}
-        />
-        <div className="flex-1">
-          <main className="py-6 md:py-8 bg-gray-50 min-h-screen">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <Routes>
-                <Route path="/home" element={<Home />} />
-                <Route path="/projects" element={<Projects />} />
-                <Route path="/project/:id" element={<ProjectDetailPage />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/" element={<Home />} />
-              </Routes>
-            </div>
-          </main>
+    <div className="flex flex-col min-h-screen bg-gray-50">
+      <Header toggleMobileMenu={toggleMobileMenu} />
+      <Aside isSidebarOpen={isSidebarOpen} closeSidebar={closeSidebar} />
+      
+      {/* Основной контент с ограничением по ширине */}
+      <main className="flex-grow">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-8">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/project/:id" element={<ProjectDetailPage />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
         </div>
-        <footer className="bg-white border-t-2 border-gray-300 p-4 md:p-6 text-center text-sm md:text-base text-gray-600">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            © 2025 RS-SOFT.RU. Все права защищены.
-          </div>
-        </footer>
-      </div>
-    </BrowserRouter>
+      </main>
+      
+      <Footer />
+    </div>
   );
 }
 

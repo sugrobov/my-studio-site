@@ -52,6 +52,12 @@ const resources = {
           design: "UI/UX дизайн",
           corporate: "Корпоративные решения"
         }
+      },
+      // Новые переводы для поиска
+      search: {
+        results: "Результаты: {{count}}",
+        scrollHint: "Прокрутите для просмотра всех результатов",
+        noResults: "Ничего не найдено"
       }
     },
   },
@@ -105,6 +111,11 @@ const resources = {
           design: "UI/UX Design",
           corporate: "Corporate Solutions"
         }
+      },
+      search: {
+        results: "Results: {{count}}",
+        scrollHint: "Scroll to view all results",
+        noResults: "No results found"
       }
     },
   },

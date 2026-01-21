@@ -57,3 +57,63 @@
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
 }
+
+/* Кастомный скроллбар для выпадающих списков */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 #f1f5f9;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #94a3b8;
+}
+
+/* Улучшенные стили для выпадающего списка поиска */
+.search-results-container {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 #f1f5f9;
+}
+
+.search-results-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.search-results-container::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 0 3px 3px 0;
+}
+
+.search-results-container::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 3px;
+}
+
+.search-results-container::-webkit-scrollbar-thumb:hover {
+  background-color: #94a3b8;
+}
+
+/* Стиль для основного контента на больших экранах */
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
+/* Улучшенные стили для фокуса */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+}
