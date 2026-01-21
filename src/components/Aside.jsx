@@ -83,21 +83,6 @@ function Aside({ isSidebarOpen, closeSidebar }) {
                 {t('menu.about')}
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                to="/contact"
-                onClick={handleItemClick}
-                className={({ isActive }) =>
-                  `block w-full text-left p-3 md:p-4 rounded-lg text-base md:text-lg font-medium transition ${
-                    isActive
-                      ? 'bg-blue-600 text-white'
-                      : 'text-gray-300 hover:bg-gray-700 hover:text-white'
-                  }`
-                }
-              >
-                Контакты
-              </NavLink>
-            </li>
           </ul>
         </nav>
 

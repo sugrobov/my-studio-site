@@ -36,7 +36,6 @@ function App() {
                 <Route path="/projects" element={<Projects />} />
                 <Route path="/project/:id" element={<ProjectDetailPage />} />
                 <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<About />} /> {/* Используем About как заглушку */}
                 <Route path="/" element={<Home />} />
               </Routes>
             </div>
