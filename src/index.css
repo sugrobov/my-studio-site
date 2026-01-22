@@ -1,29 +1,16 @@
 @import "tailwindcss";
 
-/* Кастомные CSS переменные */
-:root {
-  /* Primary colors */
+/* Кастомные CSS переменные через @theme */
+@theme {
   --color-primary-50: #eff6ff;
   --color-primary-100: #dbeafe;
   --color-primary-500: #3b82f6;
   --color-primary-600: #2563eb;
   --color-primary-700: #1d4ed8;
   
-  /* Shadows */
   --shadow-lg: 0 10px 25px -5px rgb(0 0 0 / 0.1);
   --shadow-xl: 0 20px 40px -10px rgb(0 0 0 / 0.15);
   --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-  
-  /* Register custom properties for Tailwind */
-  --tw-color-primary-50: var(--color-primary-50);
-  --tw-color-primary-100: var(--color-primary-100);
-  --tw-color-primary-500: var(--color-primary-500);
-  --tw-color-primary-600: var(--color-primary-600);
-  --tw-color-primary-700: var(--color-primary-700);
-  
-  --tw-shadow-lg: var(--shadow-lg);
-  --tw-shadow-xl: var(--shadow-xl);
-  --tw-shadow-2xl: var(--shadow-2xl);
 }
 
 /* Анимации */
@@ -95,7 +82,6 @@
   }
 }
 
-/* Удалите неиспользуемый .focus-ring или замените его: */
 .focus-ring:focus {
   outline: 2px solid var(--color-primary-500);
   outline-offset: 2px;
