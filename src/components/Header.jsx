@@ -95,15 +95,15 @@ export default function Header({ toggleMobileMenu }) {
         <div className="flex items-center justify-between">
           
           {/* Левая часть: логотип */}
-          <div className="flex items-center flex-shrink-0">
-            <img src={logo} alt="RS-SOFT" className="h-10 w-auto" />
+          <div className="flex items-center shrink-0">
+            {/* <img src={logo} alt="RS-SOFT" className="h-10 w-auto" /> */}
             <span className="ml-3 text-lg font-bold text-gray-800 hidden sm:block">
               RS-SOFT
             </span>
           </div>
 
           {/* Центральная часть: навигация для десктопа */}
-          <nav className="hidden lg:flex items-center space-x-1 mx-4 flex-grow justify-center">
+          <nav className="hidden lg:flex items-center space-x-1 mx-4 grow justify-center">
             <NavLink
               to="/home"
               className={({ isActive }) =>
@@ -187,10 +187,10 @@ export default function Header({ toggleMobileMenu }) {
               <div className="relative" ref={searchRef}>
                 <input
                   type="text"
-                  placeholder={t('search')}
+                  placeholder={t('search.placeholder')}
                   value={searchValue}
                   onChange={handleSearchChange}
-                  className="border border-gray-300 rounded-lg pl-3 pr-8 py-1.5 text-sm w-48 focus:ring-1 focus:ring-blue-500 focus:border-transparent"
+                  className="border border-gray-300 rounded-lg pl-3 pr-8 py-1.5 text-sm w-64 focus:ring-1 focus:ring-blue-500 focus:border-transparent"
                   onFocus={() => searchValue.length >= 3 && setShowResults(true)}
                 />
                 {searchValue && (
@@ -205,7 +205,7 @@ export default function Header({ toggleMobileMenu }) {
                 
                 {/* Выпадающий список результатов поиска */}
                 {showResults && searchResults.length > 0 && (
-                  <div className={`absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50 ${
+                  <div className={`absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50 w-96 max-h-80 ${
                     shouldShowScroll ? 'max-h-80 overflow-y-auto' : ''
                   }`}>
                     {/* Заголовок результатов */}
@@ -221,28 +221,28 @@ export default function Header({ toggleMobileMenu }) {
                         <button
                           key={`${result.type}-${result.id || result.path}-${index}`}
                           onClick={() => handleResultClick(result)}
-                          className="w-full text-left px-4 py-3 hover:bg-gray-50 flex items-center space-x-3 transition-colors duration-150"
+                          className="w-full text-left px-4 py-3 hover:bg-gray-50 flex items-center space-x-3 transition-colors duration-150 cursor-pointer"
                         >
                           {result.type === 'project' ? (
                             <>
-                              <div className="flex-shrink-0">
+                              <div className="shrink-0">
                                 <svg className="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
                               </div>
-                              <div className="flex-grow min-w-0">
+                              <div className="grow min-w-0">
                                 <div className="font-medium text-gray-800 truncate">{result.title}</div>
                                 <div className="text-xs text-gray-500 truncate">{t('menu.projects')}</div>
                               </div>
                             </>
                           ) : (
                             <>
-                              <div className="flex-shrink-0">
+                              <div className="shrink-0">
                                 <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                 </svg>
                               </div>
-                              <div className="flex-grow font-medium text-gray-800 truncate">{result.title}</div>
+                              <div className="grow font-medium text-gray-800 truncate">{result.title}</div>
                             </>
                           )}
                         </button>
@@ -281,10 +281,10 @@ export default function Header({ toggleMobileMenu }) {
           <div className="mt-3 lg:hidden animate-fadeIn">
             <div className="relative" ref={searchRef}>
               <div className="flex items-center space-x-2">
-                <div className="relative flex-grow">
+                <div className="relative grow">
                   <input
                     type="text"
-                    placeholder={t('search')}
+                    placeholder={t('search.placeholder')}
                     value={searchValue}
                     onChange={handleSearchChange}
                     className="border border-gray-300 rounded-lg pl-3 pr-8 py-2 text-sm w-full focus:ring-1 focus:ring-blue-500 focus:border-transparent"
@@ -313,7 +313,7 @@ export default function Header({ toggleMobileMenu }) {
               
               {/* Выпадающий список результатов поиска для мобильных */}
               {showResults && searchResults.length > 0 && (
-                <div className={`absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50 ${
+                <div className={`absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50 max-h-64 ${
                   shouldShowScroll ? 'max-h-64 overflow-y-auto' : ''
                 }`}>
                   {/* Заголовок результатов */}
@@ -333,24 +333,24 @@ export default function Header({ toggleMobileMenu }) {
                       >
                         {result.type === 'project' ? (
                           <>
-                            <div className="flex-shrink-0">
+                            <div className="shrink-0">
                               <svg className="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                               </svg>
                             </div>
-                            <div className="flex-grow min-w-0">
+                            <div className="grow min-w-0">
                               <div className="font-medium text-gray-800 truncate">{result.title}</div>
                               <div className="text-xs text-gray-500 truncate">{t('menu.projects')}</div>
                             </div>
                           </>
                         ) : (
                           <>
-                            <div className="flex-shrink-0">
+                            <div className="shrink-0">
                               <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                               </svg>
                             </div>
-                            <div className="flex-grow font-medium text-gray-800 truncate">{result.title}</div>
+                            <div className="grow font-medium text-gray-800 truncate">{result.title}</div>
                           </>
                         )}
                       </button>

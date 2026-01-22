@@ -19,7 +19,7 @@ function Aside({ isSidebarOpen, closeSidebar }) {
       )}
 
       <aside
-        className={`fixed inset-y-0 left-0 z-40 w-72 bg-gradient-to-b from-gray-900 to-gray-800 shadow-2xl transform transition-transform duration-300 ease-in-out ${
+        className={`fixed inset-y-0 left-0 z-40 w-72 bg-linear-to-b from-gray-900 to-gray-800 shadow-2xl transform transition-transform duration-300 ease-in-out ${
           isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
         } lg:hidden`}
       >

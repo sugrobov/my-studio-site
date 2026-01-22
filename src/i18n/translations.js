@@ -9,7 +9,7 @@ const resources = {
         projects: "Наши проекты", 
         about: "О компании" 
       },
-      search: "Поиск...",
+      // search: "Поиск...",
       clear: "Очистить",
       about: {
         title: "О компании",
@@ -33,7 +33,12 @@ const resources = {
         category: "ПРОЕКТ",
         completed: "Завершен",
         inProgress: "В процессе",
-        back: "Назад"
+        back: "Назад",
+        details: "Детали проекта",
+        technologies: "Технологии",
+        type: "Тип проекта",
+        status: "Статус",
+        projectId: "ID проекта"
       },
       home: {
         title: "RS-SOFT.RU - Современные IT-решения",
@@ -53,11 +58,30 @@ const resources = {
           corporate: "Корпоративные решения"
         }
       },
-      // Новые переводы для поиска
+      // переводы для поиска
       search: {
+        placeholder: "Поиск...",
         results: "Результаты: {{count}}",
         scrollHint: "Прокрутите для просмотра всех результатов",
         noResults: "Ничего не найдено"
+      },
+       tags: {
+        web: "Веб-разработка",
+        corporate: "Корпоративные решения",
+        react: "React",
+        node: "Node.js",
+        mobile: "Мобильные приложения",
+        reactNative: "React Native",
+        design: "UI/UX дизайн",
+        ecommerce: "E-commerce",
+        mongodb: "MongoDB",
+        education: "Образование",
+        postgresql: "PostgreSQL",
+        health: "Здоровье",
+        flutter: "Flutter",
+        firebase: "Firebase",
+        video: "Видео",
+        webrtc: "WebRTC"
       }
     },
   },
@@ -92,7 +116,12 @@ const resources = {
         category: "PROJECT",
         completed: "Completed",
         inProgress: "In Progress",
-        back: "Back"
+        back: "Back",
+        details: "Project Details",
+        technologies: "Technologies",
+        type: "Project Type",
+        status: "Status",
+        projectId: "Project ID"
       },
       home: {
         title: "RS-SOFT.RU - Modern IT Solutions",
@@ -113,9 +142,28 @@ const resources = {
         }
       },
       search: {
+        placeholder: "Search...",
         results: "Results: {{count}}",
         scrollHint: "Scroll to view all results",
         noResults: "No results found"
+      },
+       tags: {
+        web: "Web Development",
+        corporate: "Corporate Solutions",
+        react: "React",
+        node: "Node.js",
+        mobile: "Mobile Applications",
+        reactNative: "React Native",
+        design: "UI/UX Design",
+        ecommerce: "E-commerce",
+        mongodb: "MongoDB",
+        education: "Education",
+        postgresql: "PostgreSQL",
+        health: "Health",
+        flutter: "Flutter",
+        firebase: "Firebase",
+        video: "Video",
+        webrtc: "WebRTC"
       }
     },
   },
