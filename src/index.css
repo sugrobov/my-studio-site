@@ -1,4 +1,4 @@
-
+﻿
 @import "tailwindcss";
 
 /* Кастомные CSS переменные */
@@ -44,7 +44,7 @@
 }
 
 /* Утилиты для ограничения строк текста */
-.line-clamp-1 {
+/* .line-clamp-1 {
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -63,7 +63,7 @@
   display: -webkit-box;
   -webkit-box-orient: vertical;
   line-clamp: 3;
-}
+} */
 
 /* Кастомный скроллбар для выпадающих списков */
 .custom-scrollbar {
@@ -96,8 +96,3 @@
   }
 }
 
-/* Удалите неиспользуемый .focus-ring или замените его: */
-.focus-ring:focus {
-  outline: 2px solid var(--color-primary-500);
-  outline-offset: 2px;
-}
