@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite'
+﻿import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
@@ -18,7 +18,7 @@ export default defineConfig({
     }
   },
   
-  // Опционально - для dev сервера
+  // РћРїС†РёРѕРЅР°Р»СЊРЅРѕ - РґР»СЏ dev СЃРµСЂРІРµСЂР°
   server: {
     port: 3000,
     open: true
