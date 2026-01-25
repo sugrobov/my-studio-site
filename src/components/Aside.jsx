@@ -81,6 +81,19 @@ function Aside({ isSidebarOpen, closeSidebar }) {
             </li>
             <li>
               <NavLink
+                to="/services-dub"
+                className={({ isActive }) =>
+                  `px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 whitespace-nowrap ${isActive
+                    ? 'bg-blue-600 text-white shadow-md'
+                    : 'text-gray-700 hover:bg-blue-50 hover:text-blue-700'
+                  }`
+                }
+              >
+                {t('menu.servicesDub')}
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
                 to="/about"
                 onClick={handleItemClick}
                 className={({ isActive }) =>
