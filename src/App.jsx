@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Projects from './pages/Projects';
 import About from './pages/About';
 import ProjectDetailPage from './pages/ProjectDetailPage';
+import HomeDub from './pages/HomeDub';
 import { useState } from 'react';
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
+            <Route path="/home-dub" element={<HomeDub />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/project/:id" element={<ProjectDetailPage />} />
             <Route path="/about" element={<About />} />

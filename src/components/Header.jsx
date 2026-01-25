@@ -40,7 +40,7 @@ export default function Header({ toggleMobileMenu }) {
     if (debouncedSearch.length >= 3) {
       const projectResults = searchProjects(debouncedSearch, i18n.language);
       const pageResults = searchPages(debouncedSearch, i18n.language);
-      
+
       const allResults = [
         ...pageResults.map(page => ({
           ...page,
@@ -54,7 +54,7 @@ export default function Header({ toggleMobileMenu }) {
           path: `/project/${project.id}`,
         }))
       ];
-      
+
       setSearchResults(allResults);
       setShowResults(true);
     } else {
@@ -93,7 +93,7 @@ export default function Header({ toggleMobileMenu }) {
       {/* Основная строка */}
       <div className="py-3 px-4 sm:px-6">
         <div className="flex items-center justify-between">
-          
+
           {/* Левая часть: логотип */}
           <div className="flex items-center shrink-0">
             {/* <img src={logo} alt="RS-SOFT" className="h-10 w-auto" /> */}
@@ -107,22 +107,31 @@ export default function Header({ toggleMobileMenu }) {
             <NavLink
               to="/home"
               className={({ isActive }) =>
-                `px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 whitespace-nowrap ${
-                  isActive
-                    ? 'bg-blue-600 text-white shadow-md'
-                    : 'text-gray-700 hover:bg-blue-50 hover:text-blue-700'
+                `px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 whitespace-nowrap ${isActive
+                  ? 'bg-blue-600 text-white shadow-md'
+                  : 'text-gray-700 hover:bg-blue-50 hover:text-blue-700'
                 }`
               }
             >
               {t('menu.home')}
             </NavLink>
             <NavLink
+              to="/home-dub"
+              className={({ isActive }) =>
+                `px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 whitespace-nowrap ${isActive
+                  ? 'bg-blue-600 text-white shadow-md'
+                  : 'text-gray-700 hover:bg-blue-50 hover:text-blue-700'
+                }`
+              }
+            >
+              {t('menu.homeDub', 'Главная-дубль')} {/* Добавляем новый пункт меню */}
+            </NavLink>
+            <NavLink
               to="/projects"
               className={({ isActive }) =>
-                `px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 whitespace-nowrap ${
-                  isActive
-                    ? 'bg-blue-600 text-white shadow-md'
-                    : 'text-gray-700 hover:bg-blue-50 hover:text-blue-700'
+                `px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 whitespace-nowrap ${isActive
+                  ? 'bg-blue-600 text-white shadow-md'
+                  : 'text-gray-700 hover:bg-blue-50 hover:text-blue-700'
                 }`
               }
             >
@@ -131,10 +140,9 @@ export default function Header({ toggleMobileMenu }) {
             <NavLink
               to="/about"
               className={({ isActive }) =>
-                `px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 whitespace-nowrap ${
-                  isActive
-                    ? 'bg-blue-600 text-white shadow-md'
-                    : 'text-gray-700 hover:bg-blue-50 hover:text-blue-700'
+                `px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 whitespace-nowrap ${isActive
+                  ? 'bg-blue-600 text-white shadow-md'
+                  : 'text-gray-700 hover:bg-blue-50 hover:text-blue-700'
                 }`
               }
             >
@@ -144,27 +152,25 @@ export default function Header({ toggleMobileMenu }) {
 
           {/* Правая часть: элементы управления */}
           <div className="flex items-center space-x-3">
-            
+
             {/* Переключатель языка */}
             <div className="flex items-center space-x-1 bg-gray-100 rounded-lg p-1">
               <button
                 onClick={() => changeLanguage('ru')}
-                className={`px-2.5 py-1 rounded text-xs font-medium transition-colors whitespace-nowrap ${
-                  i18n.language === 'ru'
+                className={`px-2.5 py-1 rounded text-xs font-medium transition-colors whitespace-nowrap ${i18n.language === 'ru'
                     ? 'bg-blue-600 text-white'
                     : 'text-gray-700 hover:bg-gray-200'
-                }`}
+                  }`}
                 disabled={i18n.language === 'ru'}
               >
                 RU
               </button>
               <button
                 onClick={() => changeLanguage('en')}
-                className={`px-2.5 py-1 rounded text-xs font-medium transition-colors whitespace-nowrap ${
-                  i18n.language === 'en'
+                className={`px-2.5 py-1 rounded text-xs font-medium transition-colors whitespace-nowrap ${i18n.language === 'en'
                     ? 'bg-blue-600 text-white'
                     : 'text-gray-700 hover:bg-gray-200'
-                }`}
+                  }`}
                 disabled={i18n.language === 'en'}
               >
                 EN
@@ -202,19 +208,18 @@ export default function Header({ toggleMobileMenu }) {
                     ✕
                   </button>
                 )}
-                
+
                 {/* Выпадающий список результатов поиска */}
                 {showResults && searchResults.length > 0 && (
-                  <div className={`absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50 w-96 max-h-80 ${
-                    shouldShowScroll ? 'max-h-80 overflow-y-auto' : ''
-                  }`}>
+                  <div className={`absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50 w-96 max-h-80 ${shouldShowScroll ? 'max-h-80 overflow-y-auto' : ''
+                    }`}>
                     {/* Заголовок результатов */}
                     <div className="px-3 py-2 border-b border-gray-100 bg-gray-50">
                       <div className="text-xs font-medium text-gray-500">
                         {t('search.results', { count: searchResults.length })}
                       </div>
                     </div>
-                    
+
                     {/* Список результатов */}
                     <div className="divide-y divide-gray-100">
                       {searchResults.map((result, index) => (
@@ -248,7 +253,7 @@ export default function Header({ toggleMobileMenu }) {
                         </button>
                       ))}
                     </div>
-                    
+
                     {/* Индикатор скроллинга */}
                     {shouldShowScroll && (
                       <div className="px-3 py-2 border-t border-gray-100 bg-gray-50 text-center">
@@ -310,19 +315,18 @@ export default function Header({ toggleMobileMenu }) {
                   {t('clear')}
                 </button>
               </div>
-              
+
               {/* Выпадающий список результатов поиска для мобильных */}
               {showResults && searchResults.length > 0 && (
-                <div className={`absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50 max-h-64 ${
-                  shouldShowScroll ? 'max-h-64 overflow-y-auto' : ''
-                }`}>
+                <div className={`absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50 max-h-64 ${shouldShowScroll ? 'max-h-64 overflow-y-auto' : ''
+                  }`}>
                   {/* Заголовок результатов */}
                   <div className="px-3 py-2 border-b border-gray-100 bg-gray-50">
                     <div className="text-xs font-medium text-gray-500">
                       {t('search.results', { count: searchResults.length })}
                     </div>
                   </div>
-                  
+
                   {/* Список результатов */}
                   <div className="divide-y divide-gray-100">
                     {searchResults.map((result, index) => (
@@ -356,7 +360,7 @@ export default function Header({ toggleMobileMenu }) {
                       </button>
                     ))}
                   </div>
-                  
+
                   {/* Индикатор скроллинга для мобильных */}
                   {shouldShowScroll && (
                     <div className="px-3 py-2 border-t border-gray-100 bg-gray-50 text-center">

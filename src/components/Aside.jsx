@@ -19,9 +19,8 @@ function Aside({ isSidebarOpen, closeSidebar }) {
       )}
 
       <aside
-        className={`fixed inset-y-0 left-0 z-40 w-72 bg-linear-to-b from-gray-900 to-gray-800 shadow-2xl transform transition-transform duration-300 ease-in-out ${
-          isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
-        } lg:hidden`}
+        className={`fixed inset-y-0 left-0 z-40 w-72 bg-linear-to-b from-gray-900 to-gray-800 shadow-2xl transform transition-transform duration-300 ease-in-out ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
+          } lg:hidden`}
       >
         <div className="flex justify-between items-center p-4 md:p-6 border-b border-gray-700">
           <h2 className="text-lg md:text-xl font-bold text-white">Меню</h2>
@@ -43,10 +42,9 @@ function Aside({ isSidebarOpen, closeSidebar }) {
                 to="/home"
                 onClick={handleItemClick}
                 className={({ isActive }) =>
-                  `block w-full text-left p-3 md:p-4 rounded-lg text-base md:text-lg font-medium transition ${
-                    isActive
-                      ? 'bg-blue-600 text-white'
-                      : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                  `block w-full text-left p-3 md:p-4 rounded-lg text-base md:text-lg font-medium transition ${isActive
+                    ? 'bg-blue-600 text-white'
+                    : 'text-gray-300 hover:bg-gray-700 hover:text-white'
                   }`
                 }
               >
@@ -55,13 +53,26 @@ function Aside({ isSidebarOpen, closeSidebar }) {
             </li>
             <li>
               <NavLink
+                to="/home-dub"
+                onClick={handleItemClick}
+                className={({ isActive }) =>
+                  `block w-full text-left p-3 md:p-4 rounded-lg text-base md:text-lg font-medium transition ${isActive
+                    ? 'bg-blue-600 text-white'
+                    : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                  }`
+                }
+              >
+                {t('menu.homeDub', 'Главная-дубль')} {/* Добавляем новый пункт меню */}
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
                 to="/projects"
                 onClick={handleItemClick}
                 className={({ isActive }) =>
-                  `block w-full text-left p-3 md:p-4 rounded-lg text-base md:text-lg font-medium transition ${
-                    isActive
-                      ? 'bg-blue-600 text-white'
-                      : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                  `block w-full text-left p-3 md:p-4 rounded-lg text-base md:text-lg font-medium transition ${isActive
+                    ? 'bg-blue-600 text-white'
+                    : 'text-gray-300 hover:bg-gray-700 hover:text-white'
                   }`
                 }
               >
@@ -73,10 +84,9 @@ function Aside({ isSidebarOpen, closeSidebar }) {
                 to="/about"
                 onClick={handleItemClick}
                 className={({ isActive }) =>
-                  `block w-full text-left p-3 md:p-4 rounded-lg text-base md:text-lg font-medium transition ${
-                    isActive
-                      ? 'bg-blue-600 text-white'
-                      : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                  `block w-full text-left p-3 md:p-4 rounded-lg text-base md:text-lg font-medium transition ${isActive
+                    ? 'bg-blue-600 text-white'
+                    : 'text-gray-300 hover:bg-gray-700 hover:text-white'
                   }`
                 }
               >
