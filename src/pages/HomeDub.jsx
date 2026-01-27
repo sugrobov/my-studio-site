@@ -118,9 +118,9 @@ export default function HomeDub() {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <p className="inline-block border border-gray-300 rounded-full text-gray-600 font-medium py-1 px-4 mb-4">
+            {/* <p className="inline-block border border-gray-300 rounded-full text-gray-600 font-medium py-1 px-4 mb-4">
               {t('homeDub.services.badge')}
-            </p>
+            </p> */}
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
               {t('homeDub.services.title')}
             </h2>

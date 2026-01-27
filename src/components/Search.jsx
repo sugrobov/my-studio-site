@@ -1,16 +1,21 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDebounce } from '../hooks/useDebounce';
 import { Link } from 'react-router-dom';
-import { menuItems } from '../data/navigation';
+import { buildSearchIndex, searchInIndex } from '../data/searchIndex';
 
 export default function Search() {
-  const { t, i18n: i18nInstance } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [showResults, setShowResults] = useState(false);
   const searchRef = useRef(null);
   const debouncedSearchTerm = useDebounce(searchTerm, 300);
+
+  // Строим индекс при изменении языка
+  const searchIndex = useMemo(() => {
+    return buildSearchIndex(t, i18n);
+  }, [t, i18n.language]);
 
   // Close search results when clicking outside
   useEffect(() => {
@@ -26,111 +31,26 @@ export default function Search() {
     };
   }, []);
 
-  // Search function
+  // Поиск при изменении запроса
   useEffect(() => {
-    if (debouncedSearchTerm.length >= 3) {
-      const results = searchInTranslations(debouncedSearchTerm, i18nInstance.language);
-      setSearchResults(results);
-      setShowResults(true);
-    } else {
+    if (debouncedSearchTerm.length < 2) {
       setSearchResults([]);
       setShowResults(false);
+      return;
     }
-  }, [debouncedSearchTerm, i18nInstance.language, i18nInstance]);
 
-  // Function to search in translations
-  const searchInTranslations = (term, language) => {
-    const results = [];
-    const termLower = term.toLowerCase();
+    const results = searchInIndex(searchIndex, debouncedSearchTerm, { limit: 10 });
     
-    try {
-      // Get the translation object for the current language
-      const langData = i18nInstance.getDataByLanguage(language)?.translation ||
-                      i18nInstance.getDataByLanguage('ru')?.translation;
-      
-      if (!langData) {
-        console.error('Translation data not found');
-        return results;
-      }
-      
-      // Search in menu items
-      menuItems.forEach(item => {
-        const menuText = langData.menu?.[item.id];
-        if (menuText && menuText.toLowerCase().includes(termLower)) {
-          results.push({
-            text: menuText,
-            route: item.path,
-            title: `Меню > ${menuText}`
-          });
-        }
-      });
-      
-      // Search in common page content
-      const searchableSections = [
-        // HomeDub page
-        { path: ['homeDub', 'hero', 'title'], route: '/home-dub' },
-        { path: ['homeDub', 'hero', 'description'], route: '/home-dub' },
-        { path: ['homeDub', 'services', 'title'], route: '/home-dub' },
-        { path: ['homeDub', 'services', 'description'], route: '/home-dub' },
-        { path: ['homeDub', 'projects', 'title'], route: '/home-dub' },
-        
-        // AboutDub page
-        { path: ['aboutDub', 'about', 'title'], route: '/about-dub' },
-        { path: ['aboutDub', 'about', 'description'], route: '/about-dub' },
-        { path: ['aboutDub', 'tabs', 'story', 'title'], route: '/about-dub' },
-        { path: ['aboutDub', 'tabs', 'story', 'content'], route: '/about-dub' },
-        { path: ['aboutDub', 'tabs', 'mission', 'title'], route: '/about-dub' },
-        { path: ['aboutDub', 'tabs', 'mission', 'content'], route: '/about-dub' },
-        { path: ['aboutDub', 'tabs', 'vision', 'title'], route: '/about-dub' },
-        { path: ['aboutDub', 'tabs', 'vision', 'content'], route: '/about-dub' },
-        
-        // ServicesDub page
-        { path: ['servicesDub', 'hero', 'title'], route: '/services-dub' },
-        { path: ['servicesDub', 'hero', 'description'], route: '/services-dub' },
-        { path: ['servicesDub', 'tabs', 'planning', 'title'], route: '/services-dub' },
-        { path: ['servicesDub', 'tabs', 'planning', 'contentTitle'], route: '/services-dub' },
-        { path: ['servicesDub', 'tabs', 'investment', 'title'], route: '/services-dub' },
-        { path: ['servicesDub', 'tabs', 'investment', 'contentTitle'], route: '/services-dub' },
-        { path: ['servicesDub', 'tabs', 'consultancy', 'title'], route: '/services-dub' },
-        { path: ['servicesDub', 'tabs', 'consultancy', 'contentTitle'], route: '/services-dub' },
-        { path: ['servicesDub', 'tabs', 'loans', 'title'], route: '/services-dub' },
-        { path: ['servicesDub', 'tabs', 'loans', 'contentTitle'], route: '/services-dub' },
-        
-        // Other pages
-        { path: ['projects', 'title'], route: '/projects' },
-        { path: ['contact', 'title'], route: '/contact' },
-        { path: ['about', 'title'], route: '/about' },
-        { path: ['about', 'text'], route: '/about' }
-      ];
+    // Форматируем результаты для отображения
+    const formattedResults = results.map(result => ({
+      ...result,
+      displayText: result.text,
+      displayPath: formatResultPath(result)
+    }));
 
-      // Search through defined paths
-      searchableSections.forEach(({ path, route }) => {
-        let current = langData;
-        let validPath = true;
-        
-        for (const key of path) {
-          if (current && typeof current === 'object' && current[key] !== undefined) {
-            current = current[key];
-          } else {
-            validPath = false;
-            break;
-          }
-        }
-
-        if (validPath && current && typeof current === 'string' && current.toLowerCase().includes(termLower)) {
-          results.push({
-            text: current,
-            route: route,
-            title: path.join(' > ')
-          });
-        }
-      });
-    } catch (error) {
-      console.error('Error searching translations:', error);
-    }
-
-    return results.slice(0, 10); // Limit to 10 results
-  };
+    setSearchResults(formattedResults);
+    setShowResults(true);
+  }, [debouncedSearchTerm, searchIndex]);
 
   const clearSearch = () => {
     setSearchTerm('');
@@ -138,8 +58,37 @@ export default function Search() {
     setShowResults(false);
   };
 
+  const formatResultPath = (result) => {
+    const typeMap = {
+      'menu': 'Меню',
+      'project': 'Проект',
+      'page': 'Страница',
+      'tag': 'Тег'
+    };
+    
+    const type = typeMap[result.type] || result.type;
+    const routeName = getRouteName(result.route);
+    
+    return `${type} → ${routeName}`;
+  };
+
+  const getRouteName = (route) => {
+    const routeNames = {
+      '/home': t('menu.home'),
+      '/home-dub': t('menu.homeDub'),
+      '/about': t('menu.about'),
+      '/about-dub': t('menu.about'),
+      '/services': t('menu.services'),
+      '/services-dub': t('menu.services'),
+      '/projects': t('menu.projects'),
+      '/contact': t('menu.contact')
+    };
+    
+    return routeNames[route] || route;
+  };
+
   return (
-    <div className="search-container" ref={searchRef}>
+    <div className="search-container relative" ref={searchRef}>
       <div className="relative">
         <input
           type="text"
@@ -161,34 +110,39 @@ export default function Search() {
         )}
       </div>
 
-      {showResults && searchResults.length > 0 && (
+      {showResults && (
         <div className="search-results absolute z-50 mt-1 w-full bg-white border border-gray-200 rounded-lg shadow-lg max-h-80 overflow-y-auto">
-          <div className="search-results-count py-1">
-            <div className="px-4 py-2 text-sm text-gray-500 border-b">
-              {t('search.results', { count: searchResults.length }) || `Результаты: ${searchResults.length}`}
+          {searchResults.length > 0 ? (
+            <>
+              <div className="px-4 py-2 text-sm text-gray-500 border-b">
+                {t('search.results', { count: searchResults.length }) || `Найдено: ${searchResults.length}`}
+              </div>
+              {searchResults.map((result, index) => (
+                <Link
+                  key={result.id}
+                  to={result.route}
+                  className="search-result-item block px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer border-b border-gray-100 last:border-b-0"
+                  onClick={clearSearch}
+                >
+                  <div className="search-result-text font-medium text-gray-800 truncate">
+                    {result.displayText}
+                  </div>
+                  <div className="search-result-path text-xs text-gray-500 truncate">
+                    {result.displayPath}
+                  </div>
+                  {result.description && (
+                    <div className="search-result-desc text-xs text-gray-400 mt-1 truncate">
+                      {result.description}
+                    </div>
+                  )}
+                </Link>
+              ))}
+            </>
+          ) : (
+            <div className="px-4 py-6 text-sm text-gray-500 text-center">
+              {t('search.noResults') || 'Ничего не найдено'}
             </div>
-            {searchResults.map((result, index) => (
-              <Link
-                key={index}
-                to={result.route}
-                className="search-result-item block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600 cursor-pointer"
-                onClick={() => {
-                  clearSearch();
-                }}
-              >
-                <div className="search-result-title font-medium truncate">{result.text}</div>
-                <div className="search-result-path text-xs text-gray-500 truncate">{result.title}</div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {showResults && searchResults.length === 0 && debouncedSearchTerm.length >= 3 && (
-        <div className="search-results absolute z-50 mt-1 w-full bg-white border border-gray-200 rounded-lg shadow-lg">
-          <div className="search-no-results px-4 py-2 text-sm text-gray-500">
-            {t('search.noResults') || 'Ничего не найдено'}
-          </div>
+          )}
         </div>
       )}
     </div>
