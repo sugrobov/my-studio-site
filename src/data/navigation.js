@@ -4,22 +4,22 @@ export const menuItems = [
     path: '/home-dub',
     translationKey: 'menu.home'
   },
-  // {
-  //   id: 'projects',
-  //   path: '/projects',
-  //   translationKey: 'menu.projects'
-  // },
+  {
+    id: 'projects',
+    path: '/projects',
+    translationKey: 'menu.projects'
+  },
   {
     id: 'services',
     path: '/services-dub',
     translationKey: 'menu.servicesDub'
   },
-  // {
-  //   id: 'contact',
-  //   path: '/contact',
-  //   translationKey: 'menu.contact'
-  // }
-   {
+  {
+    id: 'contact',
+    path: '/contact',
+    translationKey: 'menu.contact'
+  },
+  {
     id: 'about',
     path: '/about-dub',
     translationKey: 'menu.about'

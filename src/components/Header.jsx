@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { menuItems } from '../data/navigation';
+import Search from './Search';
 
 export default function Header() {
   const { t, i18n } = useTranslation();
@@ -28,6 +29,11 @@ export default function Header() {
             </Link>
           </div>
 
+          {/* Search component */}
+          <div className="hidden md:flex items-center mx-4">
+            <Search />
+          </div>
+          
           {/* Навигация для десктопа */}
           <nav className="hidden md:flex space-x-8">
             {menuItems.map((item) => (
@@ -87,6 +93,11 @@ export default function Header() {
             </button>
           </div>
         </div>
+      </div>
+
+      {/* Search component for mobile */}
+      <div className="md:hidden py-2 px-4">
+        <Search />
       </div>
 
       {/* Мобильное меню */}

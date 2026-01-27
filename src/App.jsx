@@ -39,6 +39,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/about-dub" element={<AboutDub />} />
             <Route path="/services-dub" element={<ServicesDub />} />
+            <Route path="/contact" element={<About />} />
           </Routes>
         </div>
       </main>
