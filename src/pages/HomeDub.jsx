@@ -118,9 +118,6 @@ export default function HomeDub() {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            {/* <p className="inline-block border border-gray-300 rounded-full text-gray-600 font-medium py-1 px-4 mb-4">
-              {t('homeDub.services.badge')}
-            </p> */}
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
               {t('homeDub.services.title')}
             </h2>
@@ -184,39 +181,39 @@ export default function HomeDub() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
             {projectsStaticData.map((project) => (
               <div key={project.id} className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500">
-                              <div className={`h-48 ${project.imageClass} relative overflow-hidden`}>
-                                <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-black/10 group-hover:from-black/40 group-hover:to-black/20 transition-all duration-500"></div>
-                                <div className="absolute top-4 right-4 bg-white bg-opacity-90 rounded-full w-12 h-12 flex items-center justify-center">
-                                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                  </svg>
-                                </div>
-                              </div>
-                              <div className="bg-gradient-to-br from-white to-gray-50 p-6">
-                                <div className="flex justify-between items-start">
-                                  <div>
-                                    <span className="inline-block bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full mb-2">
-                                      {t(`homeDub.projects.${project.key}.category`)}
-                                    </span>
-                                    <h3 className="text-xl font-bold text-gray-800 mb-2">
-                                      {t(`homeDub.projects.${project.key}.title`)}
-                                    </h3>
-                                  </div>
-                                </div>
-                                <p className="text-gray-600 mb-4">
-                                  {t('homeDub.projects.description')}
-                                </p>
-                                <Link
-                                  to={`/project/${project.id}`}
-                                  className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
-                                >
-                                  {t('homeDub.projects.details')}
-                                  <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                  </svg>
-                                </Link>
-                              </div>
-                            </div>
+                <div className={`h-48 ${project.imageClass} relative overflow-hidden`}>
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-black/10 group-hover:from-black/40 group-hover:to-black/20 transition-all duration-500"></div>
+                  <div className="absolute top-4 right-4 bg-white bg-opacity-90 rounded-full w-12 h-12 flex items-center justify-center">
+                    <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </div>
+                </div>
+                <div className="bg-gradient-to-br from-white to-gray-50 p-6">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <span className="inline-block bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full mb-2">
+                        {t(`homeDub.projects.${project.key}.category`)}
+                      </span>
+                      <h3 className="text-xl font-bold text-gray-800 mb-2">
+                        {t(`homeDub.projects.${project.key}.title`)}
+                      </h3>
+                    </div>
+                  </div>
+                  <p className="text-gray-600 mb-4">
+                    {t('homeDub.projects.description')}
+                  </p>
+                  <Link
+                    to={`/project/${project.id}`}
+                    className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
+                  >
+                    {t('homeDub.projects.details')}
+                    <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
             ))}
           </div>
         </div>

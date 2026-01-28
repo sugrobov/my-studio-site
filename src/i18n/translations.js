@@ -7,7 +7,7 @@ const resources = {
       menu: { 
         home: "Главная", 
         homeDub: "Главная-дубль",
-        aboutDub: "О нас-дубль",
+        aboutDub: "О нас",
         services: "Услуги",
         servicesDub: "Услуги",
         projects: "Наши проекты", 
@@ -297,7 +297,7 @@ const resources = {
         homeDub: "Home Dub",
         aboutDub: "About Dub",
         services: "Services",
-        servicesDub: "Services Dub",
+        servicesDub: "Services",
         projects: "Our Projects", 
         about: "About" 
       },
