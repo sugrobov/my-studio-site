@@ -1,9 +1,10 @@
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { projects } from '../data/projects';
 
 export default function ProjectDetail({ id }) {
   const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
   const project = projects.find(p => p.id === parseInt(id));
 
   if (!project) return <div>Project not found</div>;
@@ -16,12 +17,15 @@ export default function ProjectDetail({ id }) {
 
     return (
     <div className="bg-white rounded-xl shadow-lg p-8 max-w-4xl mx-auto">
-      <Link to="/projects" className="text-blue-600 hover:text-blue-800 hover:underline mb-6 inline-flex items-center">
+      <button
+        onClick={() => navigate(-1)}
+        className="text-blue-600 hover:text-blue-800 hover:underline mb-6 inline-flex items-center"
+      >
         <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
         </svg>
         {t('project.back')}
-      </Link>
+      </button>
       
       {/* Градиентный блок с эмодзи */}
       <div 
