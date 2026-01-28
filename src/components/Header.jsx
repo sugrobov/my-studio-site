@@ -24,7 +24,7 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Логотип */}
           <div className="flex-0">
-            <Link to="/home" className="text-2xl font-bold text-blue-600 whitespace-nowrap">
+            <Link to="/" className="text-2xl font-bold text-blue-600 whitespace-nowrap">
               RS-SOFT
             </Link>
           </div>

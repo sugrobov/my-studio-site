@@ -184,39 +184,39 @@ export default function HomeDub() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
             {projectsStaticData.map((project) => (
               <div key={project.id} className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500">
-                <div className={`h-48 ${project.imageClass} relative overflow-hidden`}>
-                  <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-all duration-500"></div>
-                  <div className="absolute top-4 right-4 bg-white bg-opacity-90 rounded-full w-12 h-12 flex items-center justify-center">
-                    <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </div>
-                </div>
-                <div className="bg-white p-6">
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <span className="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full mb-2">
-                        {t(`homeDub.projects.${project.key}.category`)}
-                      </span>
-                      <h3 className="text-xl font-bold text-gray-800 mb-2">
-                        {t(`homeDub.projects.${project.key}.title`)}
-                      </h3>
-                    </div>
-                  </div>
-                  <p className="text-gray-600 mb-4">
-                    {t('homeDub.projects.description')}
-                  </p>
-                  <Link 
-                    to={`/project/${project.id}`}
-                    className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
-                  >
-                    {t('homeDub.projects.details')}
-                    <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
+                              <div className={`h-48 ${project.imageClass} relative overflow-hidden`}>
+                                <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-black/10 group-hover:from-black/40 group-hover:to-black/20 transition-all duration-500"></div>
+                                <div className="absolute top-4 right-4 bg-white bg-opacity-90 rounded-full w-12 h-12 flex items-center justify-center">
+                                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                  </svg>
+                                </div>
+                              </div>
+                              <div className="bg-gradient-to-br from-white to-gray-50 p-6">
+                                <div className="flex justify-between items-start">
+                                  <div>
+                                    <span className="inline-block bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full mb-2">
+                                      {t(`homeDub.projects.${project.key}.category`)}
+                                    </span>
+                                    <h3 className="text-xl font-bold text-gray-800 mb-2">
+                                      {t(`homeDub.projects.${project.key}.title`)}
+                                    </h3>
+                                  </div>
+                                </div>
+                                <p className="text-gray-600 mb-4">
+                                  {t('homeDub.projects.description')}
+                                </p>
+                                <Link
+                                  to={`/project/${project.id}`}
+                                  className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
+                                >
+                                  {t('homeDub.projects.details')}
+                                  <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                  </svg>
+                                </Link>
+                              </div>
+                            </div>
             ))}
           </div>
         </div>

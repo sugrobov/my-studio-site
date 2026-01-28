@@ -150,9 +150,9 @@ export default function AboutDub() {
 
             {/* Right Column - Content */}
             <div className="wow fadeInUp">
-              <div className="inline-block border border-blue-200 rounded-full text-blue-600 font-medium py-1 px-4 mb-4">
+{/*               <div className="inline-block border border-blue-200 rounded-full text-blue-600 font-medium py-1 px-4 mb-4">
                 {t('aboutDub.about.badge', 'О компании')}
-              </div>
+              </div> */}
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
                 {t('aboutDub.about.title', 'Мы помогаем нашим клиентам развивать бизнес')}
               </h2>
