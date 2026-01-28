@@ -118,9 +118,9 @@ export default function HomeDub() {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <p className="inline-block border border-gray-300 rounded-full text-gray-600 font-medium py-1 px-4 mb-4">
+{/*             <p className="inline-block border border-gray-300 rounded-full text-gray-600 font-medium py-1 px-4 mb-4">
               {t('homeDub.services.badge')}
-            </p>
+            </p> */}
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
               {t('homeDub.services.title')}
             </h2>
@@ -185,7 +185,7 @@ export default function HomeDub() {
             {projectsStaticData.map((project) => (
               <div key={project.id} className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500">
                 <div className={`h-48 ${project.imageClass} relative overflow-hidden`}>
-                  <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-all duration-500"></div>
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-opacity-30 transition-all duration-500"></div>
                   <div className="absolute top-4 right-4 bg-white bg-opacity-90 rounded-full w-12 h-12 flex items-center justify-center">
                     <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />

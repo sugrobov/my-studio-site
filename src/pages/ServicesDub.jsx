@@ -90,9 +90,9 @@ export default function ServicesDub() {
       <div className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <div className="inline-block border border-blue-200 rounded-full text-blue-600 font-medium py-1 px-4 mb-4">
+            {/* <div className="inline-block border border-blue-200 rounded-full text-blue-600 font-medium py-1 px-4 mb-4">
               {t('servicesDub.hero.badge')}
-            </div>
+            </div> */}
             <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
               {t('servicesDub.hero.title')}
             </h1>

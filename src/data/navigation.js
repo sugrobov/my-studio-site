@@ -14,11 +14,11 @@ export const menuItems = [
     path: '/services-dub',
     translationKey: 'menu.servicesDub'
   },
-  {
-    id: 'contact',
-    path: '/contact',
-    translationKey: 'menu.contact'
-  },
+  // {
+  //   id: 'contact',
+  //   path: '/contact',
+  //   translationKey: 'menu.contact'
+  // },
   {
     id: 'about',
     path: '/about-dub',
