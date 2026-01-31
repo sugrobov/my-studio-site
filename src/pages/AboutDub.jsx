@@ -27,19 +27,19 @@ export default function AboutDub() {
   const benefitsData = [
     {
       id: 1,
-      icon: 'fa-times',
+      // icon: 'fa-times',
       title: t('aboutDub.benefits.noHiddenCost.title', 'Без скрытых платежей'),
       description: t('aboutDub.benefits.noHiddenCost.description', 'Прозрачное ценообразование без дополнительных сборов')
     },
     {
       id: 2,
-      icon: 'fa-users',
+      // icon: 'fa-users',
       title: t('aboutDub.benefits.dedicatedTeam.title', 'Профессиональная команда'),
       description: t('aboutDub.benefits.dedicatedTeam.description', 'Опытные специалисты с глубокими знаниями')
     },
     {
       id: 3,
-      icon: 'fa-phone',
+      // icon: 'fa-phone',
       title: t('aboutDub.benefits.support24.title', 'Поддержка 24/7'),
       description: t('aboutDub.benefits.support24.description', 'Всегда на связи для решения любых вопросов')
     }

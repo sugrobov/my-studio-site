@@ -32,11 +32,11 @@ function App() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-8">
           <Routes>
             <Route path="/" element={<HomeDub />} />
-            <Route path="/home" element={<Home />} />
+            {/* <Route path="/home" element={<Home />} /> */}
             <Route path="/home-dub" element={<HomeDub />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/project/:id" element={<ProjectDetailPage />} />
-            <Route path="/about" element={<About />} />
+            {/* <Route path="/about" element={<About />} /> */}
             <Route path="/about-dub" element={<AboutDub />} />
             <Route path="/services-dub" element={<ServicesDub />} />
           </Routes>
