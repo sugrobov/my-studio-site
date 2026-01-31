@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { menuItems } from '../data/menu';
 
 export default function Header() {
   const { t, i18n } = useTranslation();
@@ -16,6 +17,10 @@ export default function Header() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
@@ -29,37 +34,16 @@ export default function Header() {
 
           {/* Навигация для десктопа */}
           <nav className="hidden md:flex space-x-8">
-                      <Link
-                        to="/home-dub"
-                        className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
-                      >
-                        {t('menu.home')}
-                      </Link>
-                      <Link
-                        to="/about-dub"
-                        className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
-                      >
-                        {t('menu.about')}
-                      </Link>
-                      <Link
-                        to="/projects"
-                        className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
-                      >
-                        {t('menu.projects')}
-                      </Link>
-                      <Link
-                        to="/services-dub"
-                        className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
-                      >
-                        {t('menu.servicesDub')}
-                      </Link>
-                      <Link
-                        to="/contact"
-                        className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
-                      >
-                        {t('menu.contact')}
-                      </Link>
-                    </nav>
+            {menuItems.map((item) => (
+              <Link
+                key={item.id}
+                to={item.path}
+                className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+              >
+                {t(item.translationKey)}
+              </Link>
+            ))}
+          </nav>
 
           {/* Кнопки языка и мобильного меню */}
           <div className="flex items-center space-x-4">
@@ -113,41 +97,16 @@ export default function Header() {
       {isMenuOpen && (
         <div className="md:hidden bg-white border-t">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-4 space-y-4">
-            <Link
-              to="/home-dub"
-              className="block text-gray-700 hover:text-blue-600 font-medium"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {t('menu.home')}
-            </Link>
-            <Link
-              to="/about-dub"
-              className="block text-gray-700 hover:text-blue-600 font-medium"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {t('menu.about')}
-            </Link>
-            <Link
-              to="/projects"
-              className="block text-gray-700 hover:text-blue-600 font-medium"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {t('menu.projects')}
-            </Link>
-            <Link
-              to="/contact"
-              className="block text-gray-700 hover:text-blue-600 font-medium"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {t('menu.contact')}
-            </Link>
-            <Link
-              to="/services-dub"
-              className="block text-gray-700 hover:text-blue-600 font-medium"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {t('menu.servicesDub')}
-            </Link>
+            {menuItems.map((item) => (
+              <Link
+                key={item.id}
+                to={item.path}
+                className="block text-gray-700 hover:text-blue-600 font-medium"
+                onClick={closeMenu}
+              >
+                {t(item.translationKey)}
+              </Link>
+            ))}
           </div>
         </div>
       )}
