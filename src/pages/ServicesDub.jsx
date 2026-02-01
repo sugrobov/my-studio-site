@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import CTASection from '../components/CTASection';
 
 export default function ServicesDub() {
   const { t } = useTranslation();
@@ -57,7 +58,7 @@ export default function ServicesDub() {
   return (
     <div className="services-dub">
       {/* Page Header */}
-      <div className="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-12">
+      {/* <div className="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 title-font">
@@ -84,7 +85,7 @@ export default function ServicesDub() {
             </nav>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Services Hero */}
       <div className="py-16 bg-white">
@@ -107,19 +108,16 @@ export default function ServicesDub() {
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`w-full text-left p-4 rounded-lg border transition-all duration-300 ${
-                      activeTab === tab.id
-                        ? 'bg-blue-600 text-white border-blue-600 shadow-lg'
-                        : 'bg-white text-gray-700 border-gray-200 hover:bg-gray-50 hover:border-blue-200'
-                    }`}
+                    className={`w-full text-left p-4 rounded-lg border transition-all duration-300 ${activeTab === tab.id
+                      ? 'bg-blue-600 text-white border-blue-600 shadow-lg'
+                      : 'bg-white text-gray-700 border-gray-200 hover:bg-gray-50 hover:border-blue-200'
+                      }`}
                   >
                     <div className="flex items-center">
-                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center mr-3 ${
-                        activeTab === tab.id ? 'bg-white/20' : 'bg-blue-100'
-                      }`}>
-                        <span className={`text-lg ${
-                          activeTab === tab.id ? 'text-white' : 'text-blue-600'
+                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center mr-3 ${activeTab === tab.id ? 'bg-white/20' : 'bg-blue-100'
                         }`}>
+                        <span className={`text-lg ${activeTab === tab.id ? 'text-white' : 'text-blue-600'
+                          }`}>
                           {tab.id === 'planning' && '📊'}
                           {tab.id === 'investment' && '💰'}
                           {tab.id === 'consultancy' && '💼'}
@@ -169,7 +167,7 @@ export default function ServicesDub() {
                         <p className="text-gray-600 mb-6 body-font">
                           {t(`servicesDub.tabs.${tab.id}.description`)}
                         </p>
-                        
+
                         <div className="space-y-3 mb-6">
                           {t(`servicesDub.tabs.${tab.id}.features`, { returnObjects: true }).map((feature, index) => (
                             <div key={index} className="flex items-center">
@@ -226,7 +224,7 @@ export default function ServicesDub() {
                       required
                     />
                   </div>
-                  
+
                   <div>
                     <label className="block text-gray-700 mb-2 title-font">
                       {t('servicesDub.callback.form.email')}
@@ -240,7 +238,7 @@ export default function ServicesDub() {
                       required
                     />
                   </div>
-                  
+
                   <div>
                     <label className="block text-gray-700 mb-2 title-font">
                       {t('servicesDub.callback.form.mobile')}
@@ -254,7 +252,7 @@ export default function ServicesDub() {
                       required
                     />
                   </div>
-                  
+
                   <div>
                     <label className="block text-gray-700 mb-2 title-font">
                       {t('servicesDub.callback.form.subject')}
@@ -298,31 +296,6 @@ export default function ServicesDub() {
         </div>
       </div>
 
-      {/* CTA Section */}
-      <div className="py-12 bg-gradient-to-r from-blue-900 to-indigo-900 text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl text-center">
-          <h3 className="text-2xl font-bold mb-4 title-font">
-            {t('homeDub.cta.title', 'Готовы начать проект?')}
-          </h3>
-          <p className="text-xl text-blue-100 mb-6 max-w-3xl mx-auto body-font">
-            {t('homeDub.cta.description', 'Свяжитесь с нами для обсуждения ваших идей и получения профессиональной консультации')}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/about-dub"
-              className="bg-white text-blue-900 hover:bg-blue-50 font-bold py-3 px-8 rounded-lg transition-all duration-300 title-font"
-            >
-              {t('homeDub.cta.contact', 'Связаться с нами')}
-            </Link>
-            <Link
-              to="/projects"
-              className="border-2 border-white text-white hover:border-blue-300 hover:bg-blue-300 hover:bg-opacity-20 font-bold py-3 px-8 rounded-lg transition-all duration-300 title-font"
-            >
-              {t('homeDub.cta.portfolio', 'Посмотреть портфолио')}
-            </Link>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }
