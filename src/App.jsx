@@ -7,8 +7,9 @@ import Projects from './pages/Projects';
 import About from './pages/About';
 import ProjectDetailPage from './pages/ProjectDetailPage';
 import HomeDub from './pages/HomeDub';
-import ServicesDub from './pages/ServicesDub'; 
+import ServicesDub from './pages/ServicesDub';
 import AboutDub from './pages/AboutDub';
+import routes from './routes';
 import { useState } from 'react';
 
 function App() {
@@ -26,23 +27,23 @@ function App() {
     <div className="flex flex-col min-h-screen bg-gray-50">
       <Header toggleMobileMenu={toggleMobileMenu} />
       <Aside isSidebarOpen={isSidebarOpen} closeSidebar={closeSidebar} />
-      
+
       {/* Основной контент с ограничением по ширине */}
       <main className="grow">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-8">
           <Routes>
-            <Route path="/" element={<HomeDub />} />
-            {/* <Route path="/home" element={<Home />} /> */}
-            <Route path="/home-dub" element={<HomeDub />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/project/:id" element={<ProjectDetailPage />} />
-            {/* <Route path="/about" element={<About />} /> */}
-            <Route path="/about-dub" element={<AboutDub />} />
-            <Route path="/services-dub" element={<ServicesDub />} />
+            {routes.map((route) => (
+              <Route
+                key={route.path}
+                path={route.path}
+                element={route.element}
+                exact={route.exact}
+              />
+            ))}
           </Routes>
         </div>
       </main>
-      
+
       <Footer />
     </div>
   );
