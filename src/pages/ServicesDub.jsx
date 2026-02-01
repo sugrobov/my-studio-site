@@ -60,24 +60,24 @@ export default function ServicesDub() {
       <div className="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 title-font">
               {t('servicesDub.pageHeader.title')}
             </h1>
-            <nav className="text-blue-200">
+            <nav className="text-blue-200 body-font">
               <ol className="flex justify-center space-x-2">
                 <li>
-                  <Link to="/home" className="hover:text-white transition-colors">
+                  <Link to="/home" className="hover:text-white transition-colors title-font">
                     {t('servicesDub.pageHeader.home')}
                   </Link>
                 </li>
                 <li>/</li>
                 <li>
-                  <Link to="/home-dub" className="hover:text-white transition-colors">
+                  <Link to="/home-dub" className="hover:text-white transition-colors title-font">
                     {t('servicesDub.pageHeader.pages')}
                   </Link>
                 </li>
                 <li>/</li>
-                <li className="text-white font-medium">
+                <li className="text-white font-medium title-font">
                   {t('servicesDub.pageHeader.current')}
                 </li>
               </ol>
@@ -90,10 +90,10 @@ export default function ServicesDub() {
       <div className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <div className="inline-block border border-blue-200 rounded-full text-blue-600 font-medium py-1 px-4 mb-4">
+            <div className="inline-block border border-blue-200 rounded-full text-blue-600 font-medium py-1 px-4 mb-4 title-font">
               {t('servicesDub.hero.badge')}
             </div>
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 title-font">
               {t('servicesDub.hero.title')}
             </h1>
           </div>
@@ -126,7 +126,7 @@ export default function ServicesDub() {
                           {tab.id === 'loans' && '🏦'}
                         </span>
                       </div>
-                      <h3 className="font-medium text-lg">
+                      <h3 className="font-medium text-lg title-font">
                         {t(`servicesDub.tabs.${tab.id}.title`)}
                       </h3>
                     </div>
@@ -154,7 +154,7 @@ export default function ServicesDub() {
                               {tab.id === 'consultancy' && '👨‍💼'}
                               {tab.id === 'loans' && '💳'}
                             </div>
-                            <h3 className="text-2xl font-bold text-white">
+                            <h3 className="text-2xl font-bold text-white title-font">
                               {t(`servicesDub.tabs.${tab.id}.title`)}
                             </h3>
                           </div>
@@ -163,10 +163,10 @@ export default function ServicesDub() {
 
                       {/* Content Column */}
                       <div className="p-6 md:p-8">
-                        <h2 className="text-2xl font-bold text-gray-800 mb-4">
+                        <h2 className="text-2xl font-bold text-gray-800 mb-4 title-font">
                           {t(`servicesDub.tabs.${tab.id}.contentTitle`)}
                         </h2>
-                        <p className="text-gray-600 mb-6">
+                        <p className="text-gray-600 mb-6 body-font">
                           {t(`servicesDub.tabs.${tab.id}.description`)}
                         </p>
                         
@@ -176,7 +176,7 @@ export default function ServicesDub() {
                               <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                                 <span className="text-green-600">✓</span>
                               </div>
-                              <span className="text-gray-700">{feature}</span>
+                              <span className="text-gray-700 body-font">{feature}</span>
                             </div>
                           ))}
                         </div>
@@ -203,10 +203,10 @@ export default function ServicesDub() {
           <div className="max-w-2xl mx-auto">
             <div className="bg-white rounded-xl shadow-lg p-6 md:p-8">
               <div className="text-center mb-8">
-                <div className="inline-block border border-blue-200 rounded-full text-blue-600 font-medium py-1 px-4 mb-4">
+                <div className="inline-block border border-blue-200 rounded-full text-blue-600 font-medium py-1 px-4 mb-4 title-font">
                   {t('servicesDub.callback.badge')}
                 </div>
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4 title-font">
                   {t('servicesDub.callback.title')}
                 </h2>
               </div>
@@ -214,7 +214,7 @@ export default function ServicesDub() {
               <form onSubmit={handleCallbackSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-gray-700 mb-2">
+                    <label className="block text-gray-700 mb-2 title-font">
                       {t('servicesDub.callback.form.name')}
                     </label>
                     <input
@@ -228,7 +228,7 @@ export default function ServicesDub() {
                   </div>
                   
                   <div>
-                    <label className="block text-gray-700 mb-2">
+                    <label className="block text-gray-700 mb-2 title-font">
                       {t('servicesDub.callback.form.email')}
                     </label>
                     <input
@@ -242,7 +242,7 @@ export default function ServicesDub() {
                   </div>
                   
                   <div>
-                    <label className="block text-gray-700 mb-2">
+                    <label className="block text-gray-700 mb-2 title-font">
                       {t('servicesDub.callback.form.mobile')}
                     </label>
                     <input
@@ -256,7 +256,7 @@ export default function ServicesDub() {
                   </div>
                   
                   <div>
-                    <label className="block text-gray-700 mb-2">
+                    <label className="block text-gray-700 mb-2 title-font">
                       {t('servicesDub.callback.form.subject')}
                     </label>
                     <input
@@ -271,7 +271,7 @@ export default function ServicesDub() {
                 </div>
 
                 <div>
-                  <label className="block text-gray-700 mb-2">
+                  <label className="block text-gray-700 mb-2 title-font">
                     {t('servicesDub.callback.form.message')}
                   </label>
                   <textarea
@@ -301,22 +301,22 @@ export default function ServicesDub() {
       {/* CTA Section */}
       <div className="py-12 bg-gradient-to-r from-blue-900 to-indigo-900 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl text-center">
-          <h3 className="text-2xl font-bold mb-6">
+          <h3 className="text-2xl font-bold mb-4 title-font">
             {t('homeDub.cta.title', 'Готовы начать проект?')}
           </h3>
-          <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-blue-100 mb-6 max-w-3xl mx-auto body-font">
             {t('homeDub.cta.description', 'Свяжитесь с нами для обсуждения ваших идей и получения профессиональной консультации')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              to="/about-dub" 
-              className="bg-white text-blue-900 hover:bg-blue-50 font-bold py-3 px-8 rounded-lg transition-all duration-300"
+            <Link
+              to="/about-dub"
+              className="bg-white text-blue-900 hover:bg-blue-50 font-bold py-3 px-8 rounded-lg transition-all duration-300 title-font"
             >
               {t('homeDub.cta.contact', 'Связаться с нами')}
             </Link>
-            <Link 
-              to="/projects" 
-              className="border-2 border-white text-white hover:bg-white hover:bg-opacity-10 font-bold py-3 px-8 rounded-lg transition-all duration-300"
+            <Link
+              to="/projects"
+              className="border-2 border-white text-white hover:border-blue-300 hover:bg-blue-300 hover:bg-opacity-20 font-bold py-3 px-8 rounded-lg transition-all duration-300 title-font"
             >
               {t('homeDub.cta.portfolio', 'Посмотреть портфолио')}
             </Link>

@@ -21,21 +21,21 @@ const Projects = () => {
   ];
 
   return (
-    <div class="container-xxl py-5">
-      <div class="container">
-        <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style={{ maxWidth: '600px' }}>
-          <p class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3">Our Projects</p>
-          <h1 class="display-5 mb-5">We Have Completed Latest Projects</h1>
+    <div className="container-xxl py-5">
+      <div className="container">
+        <div className="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style={{ maxWidth: '600px' }}>
+          <p className="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3">Our Projects</p>
+          <h1 className="display-5 mb-5 title-font">We Have Completed Latest Projects</h1>
         </div>
-        <div class="owl-carousel project-carousel wow fadeInUp" data-wow-delay="0.3s">
+        <div className="owl-carousel project-carousel wow fadeInUp" data-wow-delay="0.3s">
           {projectsData.map((project, index) => (
-            <div key={index} class="project-item pe-5 pb-5">
-              <div class="project-img mb-3">
-                <img class="img-fluid rounded" src={`img/${project.image}`} alt="" />
-                <a href=""><i class="fa fa-link fa-3x text-primary"></i></a>
+            <div key={index} className="project-item pe-5 pb-5">
+              <div className="project-img mb-3">
+                <img className="img-fluid rounded" src={`img/${project.image}`} alt="" />
+                <a href=""><i className="fa fa-link fa-3x text-primary"></i></a>
               </div>
-              <div class="project-title">
-                <h4 class="mb-0">{project.title}</h4>
+              <div className="project-title">
+                <h4 className="mb-0 title-font">{project.title}</h4>
               </div>
             </div>
           ))}

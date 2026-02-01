@@ -9,17 +9,17 @@ export default function Home() {
     <div className="py-8">
       {/* Заголовок и описание */}
       <div className="mb-10 text-center">
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+        <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4 title-font">
           {t('home.title')}
         </h1>
-        <p className="text-gray-600 max-w-3xl mx-auto text-lg">
+        <p className="text-gray-600 max-w-3xl mx-auto text-lg body-font">
           {t('home.description')}
         </p>
       </div>
 
       {/* Сетка проектов */}
       <div className="mb-8">
-        <h2 className="text-2xl font-bold text-gray-800 mb-6 border-l-4 border-blue-600 pl-4">
+        <h2 className="text-2xl font-bold text-gray-800 mb-6 border-l-4 border-blue-600 pl-4 title-font">
           {t('menu.projects')}
         </h2>
         <div className="flex flex-wrap -m-4">
@@ -31,14 +31,14 @@ export default function Home() {
 
       {/* Призыв к действию */}
       <div className="bg-linear-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 text-center mt-12">
-        <h3 className="text-2xl font-bold text-gray-800 mb-4">
+        <h3 className="text-2xl font-bold text-gray-800 mb-4 title-font">
           {t('home.wantMore')}
         </h3>
-        <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+        <p className="text-gray-600 mb-6 max-w-2xl mx-auto body-font">
           {t('home.portfolio')}
         </p>
-        <a 
-          href="/projects" 
+        <a
+          href="/projects"
           className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-lg transition-colors duration-300"
         >
           {t('home.seeAllProjects')}

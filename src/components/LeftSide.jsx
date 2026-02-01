@@ -18,7 +18,7 @@ const LeftSide = ({ menu, isMobileMenuOpen, onClose }) => {
                     <ul className="space-y-2">
                         {menu.map((item, index) => (
                             <li key={index}>
-                                <a href={item.link} className="block py-2 px-4 rounded hover:bg-gray-200">
+                                <a href={item.link} className="block py-2 px-4 rounded hover:bg-gray-200 body-font">
                                     {item.title}
                                 </a>
                             </li>
@@ -34,7 +34,7 @@ const LeftSide = ({ menu, isMobileMenuOpen, onClose }) => {
                     }`}
             >
                 <div className="p-4 border-b border-gray-300 flex justify-between items-center">
-                    <h2 className="text-lg font-bold">Меню</h2>
+                    <h2 className="text-lg font-bold title-font">Меню</h2>
                     <button
                         className="text-2xl font-bold focus:outline-none"
                         onClick={onClose}
@@ -46,7 +46,7 @@ const LeftSide = ({ menu, isMobileMenuOpen, onClose }) => {
                     <ul className="space-y-2">
                         {menu.map((item, index) => (
                             <li key={index}>
-                                <a href={item.link} className="block py-2 px-4 rounded hover:bg-gray-200">
+                                <a href={item.link} className="block py-2 px-4 rounded hover:bg-gray-200 body-font">
                                     {item.title}
                                 </a>
                             </li>

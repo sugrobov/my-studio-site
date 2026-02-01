@@ -59,57 +59,52 @@ export default function HomeDub() {
 
   return (
     <div className="home-dub">
-{/* Hero Section */}
-<section className="relative bg-gradient-to-r from-blue-50 via-blue-100 to-indigo-100 py-16 md:py-24 overflow-hidden">
-  <div className="absolute inset-0 opacity-5">
-    <div className="absolute top-0 right-0 w-64 h-64 bg-blue-400 rounded-full -translate-y-32 translate-x-32"></div>
-    <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-400 rounded-full translate-y-48 -translate-x-48"></div>
-  </div>
-  
-  <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
-    <div className="flex flex-col lg:flex-row items-center gap-12">
-      <div className="lg:w-1/2">
-        <p className="inline-block border border-blue-600 border-opacity-30 rounded-full text-blue-800 font-medium py-1 px-4 mb-4 bg-white/50 backdrop-blur-sm">
-          {t('homeDub.hero.badge')}
-        </p>
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 bg-clip-text text-transparent">
-          {t('homeDub.hero.title')}
-        </h1>
-        <p className="text-lg md:text-xl text-gray-800 mb-8 max-w-2xl">
-          {t('homeDub.hero.description')}
-        </p>
-        <div className="flex flex-wrap gap-4">
-          <Link 
-            to="/projects" 
-            className="bg-gradient-to-r from-blue-600 to-blue-800 text-white hover:from-blue-700 hover:to-blue-900 font-bold py-3 px-8 rounded-lg transition-all duration-300 hover:shadow-xl"
-          >
-            {t('homeDub.hero.buttonProjects')}
-          </Link>
-          <Link 
-            to="/about" 
-            className="border-2 border-blue-700 text-blue-700 hover:bg-blue-50 hover:border-blue-800 hover:text-blue-800 font-bold py-3 px-8 rounded-lg transition-all duration-300"
-          >
-            {t('homeDub.hero.buttonAbout')}
-          </Link>
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-r from-blue-50 via-blue-100 to-indigo-100 py-16 md:py-24 overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+            <div className="lg:w-1/2">
+              <p className="inline-block border border-blue-600 border-opacity-30 rounded-full text-blue-900 font-medium py-1 px-4 mb-4 bg-white/50 backdrop-blur-sm title-font">
+                {t('homeDub.hero.badge')}
+              </p>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent title-font">
+                {t('homeDub.hero.title')}
+              </h1>
+              <p className="text-lg md:text-xl text-gray-900 mb-8 max-w-2xl font-medium body-font">
+                {t('homeDub.hero.description')}
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Link
+                  to="/projects"
+                  className="bg-gradient-to-r from-blue-600 to-blue-800 text-white hover:from-blue-700 hover:to-blue-900 font-bold py-3 px-8 rounded-lg transition-all duration-300 hover:shadow-xl"
+                >
+                  {t('homeDub.hero.buttonProjects')}
+                </Link>
+                <Link
+                  to="/about"
+                  className="border-2 border-blue-700 text-blue-700 hover:bg-blue-50 hover:border-blue-800 hover:text-blue-800 font-bold py-3 px-8 rounded-lg transition-all duration-300"
+                >
+                  {t('homeDub.hero.buttonAbout')}
+                </Link>
+              </div>
+            </div>
+
+            {/* Карусель */}
+            <div className="lg:w-1/2 h-80 md:h-96 lg:h-[500px] w-full">
+              <Carousel />
+            </div>
+          </div>
         </div>
-      </div>
-      
-      {/* Карусель */}
-      <div className="lg:w-1/2 h-80 md:h-96 lg:h-[500px] w-full">
-        <Carousel />
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* Services Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4 title-font">
               {t('homeDub.services.title')}
             </h2>
-            <p className="text-gray-600 text-lg">
+            <p className="text-gray-600 text-lg body-font">
               {t('homeDub.services.description')}
             </p>
           </div>
@@ -123,14 +118,14 @@ export default function HomeDub() {
                 <div className={`inline-flex p-4 rounded-lg bg-gradient-to-r ${service.color} mb-4`}>
                   <span className="text-3xl">{service.icon}</span>
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-3">
+                <h3 className="text-xl font-bold text-gray-800 mb-3 title-font">
                   {t(`homeDub.services.${service.key}.title`)}
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-600 body-font">
                   {t(`homeDub.services.${service.key}.description`)}
                 </p>
                 <div className="mt-4 pt-4 border-t border-gray-100">
-                  <a href="#" className="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center">
+                  <a href="#" className="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center title-font">
                     {t('homeDub.services.learnMore')}
                     <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -148,10 +143,10 @@ export default function HomeDub() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
             <div>
-              <p className="inline-block border border-gray-300 rounded-full text-gray-600 font-medium py-1 px-4 mb-2">
+              <p className="inline-block border border-gray-300 rounded-full text-gray-600 font-medium py-1 px-4 mb-2 title-font">
                 {t('homeDub.projects.badge')}
               </p>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 title-font">
                 {t('homeDub.projects.title')}
               </h2>
             </div>
@@ -180,20 +175,20 @@ export default function HomeDub() {
                 <div className="bg-gradient-to-br from-white to-gray-50 p-6">
                   <div className="flex justify-between items-start">
                     <div>
-                      <span className="inline-block bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full mb-2">
+                      <span className="inline-block bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full mb-2 title-font">
                         {t(`homeDub.projects.${project.key}.category`)}
                       </span>
-                      <h3 className="text-xl font-bold text-gray-800 mb-2">
+                      <h3 className="text-xl font-bold text-gray-800 mb-2 title-font">
                         {t(`homeDub.projects.${project.key}.title`)}
                       </h3>
                     </div>
                   </div>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-gray-600 mb-4 body-font">
                     {t('homeDub.projects.description')}
                   </p>
                   <Link
                     to={`/project/${project.id}`}
-                    className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
+                    className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium title-font"
                   >
                     {t('homeDub.projects.details')}
                     <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -212,44 +207,44 @@ export default function HomeDub() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">50+</div>
-              <div className="text-gray-700 font-medium">{t('homeDub.stats.projects')}</div>
+              <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2 title-font">50+</div>
+              <div className="text-gray-700 font-medium title-font">{t('homeDub.stats.projects')}</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">30+</div>
-              <div className="text-gray-700 font-medium">{t('homeDub.stats.clients')}</div>
+              <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2 title-font">30+</div>
+              <div className="text-gray-700 font-medium title-font">{t('homeDub.stats.clients')}</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">5+</div>
-              <div className="text-gray-700 font-medium">{t('homeDub.stats.experience')}</div>
+              <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2 title-font">5+</div>
+              <div className="text-gray-700 font-medium title-font">{t('homeDub.stats.experience')}</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">15+</div>
-              <div className="text-gray-700 font-medium">{t('homeDub.stats.specialists')}</div>
+              <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2 title-font">15+</div>
+              <div className="text-gray-700 font-medium title-font">{t('homeDub.stats.specialists')}</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-900 to-indigo-900 text-white">
+      <section className="py-12 bg-gradient-to-r from-blue-900 to-indigo-900 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 title-font">
             {t('homeDub.cta.title')}
           </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-blue-100 mb-6 max-w-3xl mx-auto body-font">
             {t('homeDub.cta.description')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/about"
-              className="bg-white text-blue-900 hover:bg-blue-50 font-bold py-3 px-8 rounded-lg transition-all duration-300"
+              className="bg-white text-blue-900 hover:bg-blue-50 font-bold py-3 px-8 rounded-lg transition-all duration-300 title-font"
             >
               {t('homeDub.cta.contact')}
             </Link>
             <Link
               to="/projects"
-              className="border-2 border-white text-white hover:bg-white hover:bg-opacity-10 font-bold py-3 px-8 rounded-lg transition-all duration-300"
+              className="border-2 border-white text-white hover:border-blue-300 hover:bg-blue-300 hover:bg-opacity-20 font-bold py-3 px-8 rounded-lg transition-all duration-300 title-font"
             >
               {t('homeDub.cta.portfolio')}
             </Link>

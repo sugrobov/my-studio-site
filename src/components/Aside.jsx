@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { menuItems } from '../data/navigation'
 
 function Aside({ isSidebarOpen, closeSidebar }) {
   const { t } = useTranslation();
@@ -37,75 +38,22 @@ function Aside({ isSidebarOpen, closeSidebar }) {
 
         <nav className="p-3 md:p-4">
           <ul className="space-y-2 md:space-y-3">
-            <li>
-              <NavLink
-                to="/home"
-                onClick={handleItemClick}
-                className={({ isActive }) =>
-                  `block w-full text-left p-3 md:p-4 rounded-lg text-base md:text-lg font-medium transition ${isActive
-                    ? 'bg-blue-600 text-white'
-                    : 'text-gray-300 hover:bg-gray-700 hover:text-white'
-                  }`
-                }
-              >
-                {t('menu.home')}
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/home-dub"
-                onClick={handleItemClick}
-                className={({ isActive }) =>
-                  `block w-full text-left p-3 md:p-4 rounded-lg text-base md:text-lg font-medium transition ${isActive
-                    ? 'bg-blue-600 text-white'
-                    : 'text-gray-300 hover:bg-gray-700 hover:text-white'
-                  }`
-                }
-              >
-                {t('menu.homeDub', 'Главная-дубль')} {/* Добавляем новый пункт меню */}
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/projects"
-                onClick={handleItemClick}
-                className={({ isActive }) =>
-                  `block w-full text-left p-3 md:p-4 rounded-lg text-base md:text-lg font-medium transition ${isActive
-                    ? 'bg-blue-600 text-white'
-                    : 'text-gray-300 hover:bg-gray-700 hover:text-white'
-                  }`
-                }
-              >
-                {t('menu.projects')}
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/services-dub"
-                className={({ isActive }) =>
-                  `px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 whitespace-nowrap ${isActive
-                    ? 'bg-blue-600 text-white shadow-md'
-                    : 'text-gray-700 hover:bg-blue-50 hover:text-blue-700'
-                  }`
-                }
-              >
-                {t('menu.servicesDub')}
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/about"
-                onClick={handleItemClick}
-                className={({ isActive }) =>
-                  `block w-full text-left p-3 md:p-4 rounded-lg text-base md:text-lg font-medium transition ${isActive
-                    ? 'bg-blue-600 text-white'
-                    : 'text-gray-300 hover:bg-gray-700 hover:text-white'
-                  }`
-                }
-              >
-                {t('menu.about')}
-              </NavLink>
-            </li>
+            {menuItems.map((item) => (
+              <li key={item.id}>
+                <NavLink
+                  to={item.path}
+                  onClick={handleItemClick}
+                  className={({ isActive }) =>
+                    `block w-full text-left p-3 md:p-4 rounded-lg text-base md:text-lg font-medium transition ${isActive
+                      ? 'bg-blue-600 text-white'
+                      : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                    }`
+                  }
+                >
+                  {t(item.translationKey)}
+                </NavLink>
+              </li>
+            ))}
           </ul>
         </nav>
 

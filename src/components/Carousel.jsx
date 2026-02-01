@@ -61,13 +61,13 @@ export default function Carousel() {
           >
             <div className="absolute inset-0 bg-black/10"></div>
             <div className="relative h-full flex flex-col items-center justify-center text-center text-white p-8">
-              <p className="inline-block border border-white/50 rounded-full text-white font-medium py-1 px-4 mb-4">
+              <p className="inline-block border border-white/50 rounded-full text-white font-medium py-1 px-4 mb-4 title-font">
                 {slide.subtitle}
               </p>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 max-w-2xl">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 max-w-2xl title-font">
                 {slide.title}
               </h1>
-              <button className="bg-white text-blue-900 hover:bg-blue-50 font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105">
+              <button className="bg-white text-blue-900 hover:bg-blue-50 font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 title-font">
                 {slide.button}
               </button>
             </div>

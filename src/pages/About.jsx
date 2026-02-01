@@ -6,8 +6,8 @@ export default function About() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-6">{t('about.title')}</h1>
-      <p className="text-gray-800 mb-4">{t('about.text')}</p>
+      <h1 className="text-2xl font-bold mb-6 title-font">{t('about.title')}</h1>
+      <p className="text-gray-800 mb-4 body-font">{t('about.text')}</p>
       <ContactForm />
     </div>
   );

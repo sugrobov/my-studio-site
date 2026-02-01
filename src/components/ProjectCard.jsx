@@ -38,14 +38,14 @@ export default function ProjectCard({ project }) {
         <div className="p-5 flex flex-col grow">
           {/* Заголовок - фиксированная высота, 2 строки максимум */}
           <div className="min-h-14 mb-2">
-            <h2 className="font-bold text-gray-800 text-lg line-clamp-2 leading-tight">
+            <h2 className="font-bold text-gray-800 text-lg line-clamp-2 leading-tight title-font">
               {project.title[currentLang]}
             </h2>
           </div>
 
           {/* Описание - фиксированная высота, 3 строки */}
           <div className="grow mb-3">
-            <p className="text-gray-600 text-sm line-clamp-3 leading-relaxed">
+            <p className="text-gray-600 text-sm line-clamp-3 leading-relaxed body-font">
               {project.desc[currentLang]}
             </p>
           </div>
@@ -54,9 +54,9 @@ export default function ProjectCard({ project }) {
           <div className="min-h-15 mb-4">
             <div className="flex flex-wrap gap-1.5">
               {translatedTags.slice(0, 4).map((tag, index) => (
-                <span 
+                <span
                   key={index}
-                  className="bg-blue-50 text-blue-700 text-[11px] px-2.5 py-1 rounded-full border border-blue-100 font-medium"
+                  className="bg-blue-50 text-blue-700 text-[11px] px-2.5 py-1 rounded-full border border-blue-100 font-medium title-font"
                 >
                   {tag}
                 </span>
@@ -69,7 +69,7 @@ export default function ProjectCard({ project }) {
             <div className="flex items-center justify-between">
               <Link
                 to={`/project/${project.id}`}
-                className="inline-flex items-center bg-blue-50 hover:bg-blue-100 text-blue-700 py-2 px-4 rounded-lg text-sm font-semibold transition-colors duration-200"
+                className="inline-flex items-center bg-blue-50 hover:bg-blue-100 text-blue-700 py-2 px-4 rounded-lg text-sm font-semibold transition-colors duration-200 title-font"
               >
                 {t('project.more')}
                 <svg className="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -78,7 +78,7 @@ export default function ProjectCard({ project }) {
               </Link>
               
               <div className="flex items-center text-xs text-gray-500">
-                <span className={`px-2 py-1 rounded-full ${project.id % 2 === 0 ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'}`}>
+                <span className={`px-2 py-1 rounded-full ${project.id % 2 === 0 ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'} title-font`}>
                   {project.id % 2 === 0 ? t('project.completed') : t('project.inProgress')}
                 </span>
               </div>

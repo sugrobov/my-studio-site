@@ -42,14 +42,14 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4 mt-6">
-      <h3 className="text-xl font-semibold">{t('contact.title')}</h3>
+      <h3 className="text-xl font-semibold title-font">{t('contact.title')}</h3>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <input
           name="name"
           value={form.name}
           onChange={handleChange}
           placeholder={t('contact.name')}
-          className="border p-2 rounded"
+          className="border p-2 rounded title-font"
           required
         />
         <input
@@ -57,7 +57,7 @@ export default function ContactForm() {
           value={form.surname}
           onChange={handleChange}
           placeholder={t('contact.surname')}
-          className="border p-2 rounded"
+          className="border p-2 rounded title-font"
           required
         />
         <input
@@ -65,7 +65,7 @@ export default function ContactForm() {
           value={form.city}
           onChange={handleChange}
           placeholder={t('contact.city')}
-          className="border p-2 rounded"
+          className="border p-2 rounded title-font"
           required
         />
         <input
@@ -73,7 +73,7 @@ export default function ContactForm() {
           value={form.phone}
           onChange={handleChange}
           placeholder={t('contact.phone')}
-          className="border p-2 rounded"
+          className="border p-2 rounded title-font"
           required
         />
       </div>
@@ -82,7 +82,7 @@ export default function ContactForm() {
         value={form.message}
         onChange={handleChange}
         placeholder={t('contact.message')}
-        className="w-full border p-2 rounded"
+        className="w-full border p-2 rounded title-font"
         rows="4"
         required
       ></textarea>
@@ -92,19 +92,19 @@ export default function ContactForm() {
           value={form.captcha}
           onChange={handleChange}
           placeholder={t('contact.captcha')}
-          className="border p-2 rounded"
+          className="border p-2 rounded title-font"
           required
         />
-        <div className="bg-gray-200 px-3 py-2 rounded font-bold select-none">ABC123</div>
+        <div className="bg-gray-200 px-3 py-2 rounded font-bold select-none title-font">ABC123</div>
       </div>
       <div className="flex gap-4">
-        <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+        <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 title-font">
           {t('contact.send')}
         </button>
         <button
           type="button"
           onClick={handleClear}
-          className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600"
+          className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 title-font"
         >
           {t('contact.clear')}
         </button>

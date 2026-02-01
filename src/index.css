@@ -10,6 +10,11 @@
   --color-primary-600: #2563eb;
   --color-primary-700: #1d4ed8;
   
+  /* Text colors */
+  --color-text-primary: #111827;
+  --color-text-secondary: #6b7280;
+  --color-text-tertiary: #9ca3af;
+  
   /* Shadows */
   --shadow-lg: 0 10px 25px -5px rgb(0 0 0 / 0.1);
   --shadow-xl: 0 20px 40px -10px rgb(0 0 0 / 0.15);
@@ -41,6 +46,29 @@
 
 .animate-fadeIn {
   animation: fadeIn 0.3s ease-out;
+}
+
+/* Consistent text styles */
+.text-primary {
+  color: var(--color-text-primary);
+}
+
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.text-tertiary {
+  color: var(--color-text-tertiary);
+}
+
+.title-font {
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.body-font {
+  color: var(--color-text-secondary);
+  line-height: 1.6;
 }
 
 /* Утилиты для ограничения строк текста */

@@ -104,24 +104,24 @@ export default function AboutDub() {
       <div className="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 title-font">
               {t('aboutDub.pageHeader.title', 'О нас')}
             </h1>
-            <nav className="text-blue-200">
+            <nav className="text-blue-200 body-font">
               <ol className="flex justify-center space-x-2">
                 <li>
-                  <Link to="/home" className="hover:text-white transition-colors">
+                  <Link to="/home" className="hover:text-white transition-colors title-font">
                     {t('aboutDub.pageHeader.home', 'Главная')}
                   </Link>
                 </li>
                 <li>/</li>
                 <li>
-                  <Link to="/home-dub" className="hover:text-white transition-colors">
+                  <Link to="/home-dub" className="hover:text-white transition-colors title-font">
                     {t('aboutDub.pageHeader.pages', 'Страницы')}
                   </Link>
                 </li>
                 <li>/</li>
-                <li className="text-white font-medium">
+                <li className="text-white font-medium title-font">
                   {t('aboutDub.pageHeader.current', 'О нас')}
                 </li>
               </ol>
@@ -150,13 +150,13 @@ export default function AboutDub() {
 
             {/* Right Column - Content */}
             <div className="wow fadeInUp">
-              <div className="inline-block border border-blue-200 rounded-full text-blue-600 font-medium py-1 px-4 mb-4">
+              <div className="inline-block border border-blue-200 rounded-full text-blue-600 font-medium py-1 px-4 mb-4 title-font">
                 {t('aboutDub.about.badge', 'О компании')}
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 title-font">
                 {t('aboutDub.about.title', 'Мы помогаем нашим клиентам развивать бизнес')}
               </h2>
-              <p className="text-gray-600 mb-8 text-lg">
+              <p className="text-gray-600 mb-8 text-lg body-font">
                 {t('aboutDub.about.description', 'Мы — команда профессионалов, создающая современные IT-решения для бизнеса. Наша цель — превращать идеи в реальность с помощью качественного кода и инновационных технологий.')}
               </p>
 
@@ -165,24 +165,24 @@ export default function AboutDub() {
                 <div className="flex flex-wrap border-b border-gray-200 mb-6">
                   <button
                     onClick={() => setActiveTab('story')}
-                    className={`px-6 py-3 font-medium text-lg transition-colors ${activeTab === 'story' 
-                      ? 'text-blue-600 border-b-2 border-blue-600' 
+                    className={`px-6 py-3 font-medium text-lg transition-colors title-font ${activeTab === 'story'
+                      ? 'text-blue-600 border-b-2 border-blue-600'
                       : 'text-gray-600 hover:text-blue-600'}`}
                   >
                     {tabContent.story.title}
                   </button>
                   <button
                     onClick={() => setActiveTab('mission')}
-                    className={`px-6 py-3 font-medium text-lg transition-colors ${activeTab === 'mission' 
-                      ? 'text-blue-600 border-b-2 border-blue-600' 
+                    className={`px-6 py-3 font-medium text-lg transition-colors title-font ${activeTab === 'mission'
+                      ? 'text-blue-600 border-b-2 border-blue-600'
                       : 'text-gray-600 hover:text-blue-600'}`}
                   >
                     {tabContent.mission.title}
                   </button>
                   <button
                     onClick={() => setActiveTab('vision')}
-                    className={`px-6 py-3 font-medium text-lg transition-colors ${activeTab === 'vision' 
-                      ? 'text-blue-600 border-b-2 border-blue-600' 
+                    className={`px-6 py-3 font-medium text-lg transition-colors title-font ${activeTab === 'vision'
+                      ? 'text-blue-600 border-b-2 border-blue-600'
                       : 'text-gray-600 hover:text-blue-600'}`}
                   >
                     {tabContent.vision.title}
@@ -191,13 +191,13 @@ export default function AboutDub() {
 
                 <div className="tab-content">
                   <div className={`${activeTab === 'story' ? 'block' : 'hidden'}`}>
-                    <p className="text-gray-600">{tabContent.story.content}</p>
+                    <p className="text-gray-600 body-font">{tabContent.story.content}</p>
                   </div>
                   <div className={`${activeTab === 'mission' ? 'block' : 'hidden'}`}>
-                    <p className="text-gray-600">{tabContent.mission.content}</p>
+                    <p className="text-gray-600 body-font">{tabContent.mission.content}</p>
                   </div>
                   <div className={`${activeTab === 'vision' ? 'block' : 'hidden'}`}>
-                    <p className="text-gray-600">{tabContent.vision.content}</p>
+                    <p className="text-gray-600 body-font">{tabContent.vision.content}</p>
                   </div>
                 </div>
               </div>
@@ -217,8 +217,8 @@ export default function AboutDub() {
                     </span>
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-gray-800 mb-2">{benefit.title}</h4>
-                    <p className="text-gray-600">{benefit.description}</p>
+                    <h4 className="text-xl font-bold text-gray-800 mb-2 title-font">{benefit.title}</h4>
+                    <p className="text-gray-600 body-font">{benefit.description}</p>
                   </div>
                 </div>
               ))}
@@ -241,8 +241,8 @@ export default function AboutDub() {
                     {stat.id === 4 && '🏆'}
                   </span>
                 </div>
-                <div className="text-4xl md:text-5xl font-bold mb-2">{stat.value}</div>
-                <div className="text-blue-100">{stat.label}</div>
+                <div className="text-4xl md:text-5xl font-bold mb-2 title-font">{stat.value}</div>
+                <div className="text-blue-100 body-font">{stat.label}</div>
                 <div className="w-12 h-1 bg-white mx-auto mt-4 rounded-full"></div>
               </div>
             ))}
@@ -254,13 +254,13 @@ export default function AboutDub() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <div className="inline-block border border-gray-300 rounded-full text-gray-600 font-medium py-1 px-4 mb-4">
+            <div className="inline-block border border-gray-300 rounded-full text-gray-600 font-medium py-1 px-4 mb-4 title-font">
               {t('aboutDub.team.badge', 'Наша команда')}
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4 title-font">
               {t('aboutDub.team.title', 'Профессиональная команда')}
             </h2>
-            <p className="text-gray-600">
+            <p className="text-gray-600 body-font">
               {t('aboutDub.team.description', 'Наши специалисты обладают многолетним опытом в разработке IT-решений для бизнеса')}
             </p>
           </div>
@@ -272,8 +272,8 @@ export default function AboutDub() {
                   <div className="text-8xl">{member.image}</div>
                 </div>
                 <div className="bg-white p-6 text-center">
-                  <h4 className="text-xl font-bold text-gray-800 mb-1">{member.name}</h4>
-                  <p className="text-gray-600 mb-4">{member.position}</p>
+                  <h4 className="text-xl font-bold text-gray-800 mb-1 title-font">{member.name}</h4>
+                  <p className="text-gray-600 mb-4 body-font">{member.position}</p>
                   
                   <div className="flex justify-center space-x-3">
                     <a href="#" className="w-10 h-10 bg-blue-100 hover:bg-blue-600 text-blue-600 hover:text-white rounded-full flex items-center justify-center transition-colors">
@@ -308,10 +308,10 @@ export default function AboutDub() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl font-bold text-gray-800 mb-6">
+              <h2 className="text-3xl font-bold text-gray-800 mb-6 title-font">
                 {t('aboutDub.contact.title', 'Свяжитесь с нами')}
               </h2>
-              <p className="text-gray-600 mb-8">
+              <p className="text-gray-600 mb-8 body-font">
                 {t('aboutDub.contact.description', 'Готовы обсудить ваш проект? Заполните форму и мы свяжемся с вами в ближайшее время для консультации.')}
               </p>
               
@@ -321,8 +321,8 @@ export default function AboutDub() {
                     <span className="text-xl text-blue-600">📍</span>
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-800 mb-1">{t('aboutDub.contact.address.title', 'Адрес')}</h4>
-                    <p className="text-gray-600">{t('aboutDub.contact.address.value', 'г. Москва, ул. Примерная, д. 123')}</p>
+                    <h4 className="font-bold text-gray-800 mb-1 title-font">{t('aboutDub.contact.address.title', 'Адрес')}</h4>
+                    <p className="text-gray-600 body-font">{t('aboutDub.contact.address.value', 'г. Москва, ул. Примерная, д. 123')}</p>
                   </div>
                 </div>
                 
@@ -331,8 +331,8 @@ export default function AboutDub() {
                     <span className="text-xl text-blue-600">📧</span>
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-800 mb-1">{t('aboutDub.contact.email.title', 'Email')}</h4>
-                    <p className="text-gray-600">info@rs-soft.ru</p>
+                    <h4 className="font-bold text-gray-800 mb-1 title-font">{t('aboutDub.contact.email.title', 'Email')}</h4>
+                    <p className="text-gray-600 body-font">info@rs-soft.ru</p>
                   </div>
                 </div>
                 
@@ -341,8 +341,8 @@ export default function AboutDub() {
                     <span className="text-xl text-blue-600">📞</span>
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-800 mb-1">{t('aboutDub.contact.phone.title', 'Телефон')}</h4>
-                    <p className="text-gray-600">+7 (999) 123-45-67</p>
+                    <h4 className="font-bold text-gray-800 mb-1 title-font">{t('aboutDub.contact.phone.title', 'Телефон')}</h4>
+                    <p className="text-gray-600 body-font">+7 (999) 123-45-67</p>
                   </div>
                 </div>
               </div>
@@ -358,19 +358,19 @@ export default function AboutDub() {
       {/* Footer-like CTA Section */}
       <section className="py-12 bg-gradient-to-r from-blue-900 to-indigo-900 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl text-center">
-          <h3 className="text-2xl font-bold mb-6">
+          <h3 className="text-2xl font-bold mb-4 title-font">
             {t('aboutDub.cta.title', 'Готовы начать сотрудничество?')}
           </h3>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              to="/contact" 
-              className="bg-white text-blue-900 hover:bg-blue-50 font-bold py-3 px-8 rounded-lg transition-all duration-300"
+            <Link
+              to="/contact"
+              className="bg-white text-blue-900 hover:bg-blue-50 font-bold py-3 px-8 rounded-lg transition-all duration-300 title-font"
             >
               {t('aboutDub.cta.contact', 'Связаться с нами')}
             </Link>
-            <Link 
-              to="/projects" 
-              className="border-2 border-white text-white hover:bg-white hover:bg-opacity-10 font-bold py-3 px-8 rounded-lg transition-all duration-300"
+            <Link
+              to="/projects"
+              className="border-2 border-white text-white hover:border-blue-300 hover:bg-blue-300 hover:bg-opacity-20 font-bold py-3 px-8 rounded-lg transition-all duration-300 title-font"
             >
               {t('aboutDub.cta.portfolio', 'Посмотреть проекты')}
             </Link>

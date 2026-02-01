@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { menuItems } from '../data/menu';
+import { menuItems } from '../data/navigation';
 
 export default function Header() {
   const { t, i18n } = useTranslation();
@@ -27,7 +27,7 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Логотип */}
           <div className="flex-shrink-0">
-            <Link to="/home" className="text-2xl font-bold text-blue-600">
+            <Link to="/home" className="text-2xl font-bold text-blue-600 title-font">
               RS-SOFT
             </Link>
           </div>
@@ -38,7 +38,7 @@ export default function Header() {
               <Link
                 key={item.id}
                 to={item.path}
-                className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+                className="text-gray-700 hover:text-blue-600 font-medium transition-colors title-font"
               >
                 {t(item.translationKey)}
               </Link>
@@ -101,7 +101,7 @@ export default function Header() {
               <Link
                 key={item.id}
                 to={item.path}
-                className="block text-gray-700 hover:text-blue-600 font-medium"
+                className="block text-gray-700 hover:text-blue-600 font-medium title-font"
                 onClick={closeMenu}
               >
                 {t(item.translationKey)}

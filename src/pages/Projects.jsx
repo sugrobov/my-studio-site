@@ -9,10 +9,10 @@ export default function Projects() {
     <div className="py-8">
       {/* Заголовок и описание */}
       <div className="mb-10">
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">
+        <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2 title-font">
           {t('projects.title')}
         </h1>
-        <p className="text-gray-600 text-lg mb-8">
+        <p className="text-gray-600 text-lg mb-8 body-font">
           {t('projects.totalProjects')} <span className="font-bold text-blue-600">{projects.length}</span>
         </p>
 
