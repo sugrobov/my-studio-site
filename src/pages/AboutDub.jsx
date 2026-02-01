@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import ContactForm from '../components/ContactForm';
+import CTASection from '../components/CTASection';
 
 export default function AboutDub() {
   const { t } = useTranslation();
@@ -101,7 +102,7 @@ export default function AboutDub() {
   return (
     <div className="about-dub">
       {/* Page Header */}
-      <div className="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-12">
+{/*       <div className="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 title-font">
@@ -128,7 +129,7 @@ export default function AboutDub() {
             </nav>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* About Section */}
       <section className="py-16 bg-white">
@@ -150,9 +151,9 @@ export default function AboutDub() {
 
             {/* Right Column - Content */}
             <div className="wow fadeInUp">
-              <div className="inline-block border border-blue-200 rounded-full text-blue-600 font-medium py-1 px-4 mb-4 title-font">
+              {/* <div className="inline-block border border-blue-200 rounded-full text-blue-600 font-medium py-1 px-4 mb-4 title-font">
                 {t('aboutDub.about.badge', 'О компании')}
-              </div>
+              </div> */}
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 title-font">
                 {t('aboutDub.about.title', 'Мы помогаем нашим клиентам развивать бизнес')}
               </h2>
@@ -274,7 +275,7 @@ export default function AboutDub() {
                 <div className="bg-white p-6 text-center">
                   <h4 className="text-xl font-bold text-gray-800 mb-1 title-font">{member.name}</h4>
                   <p className="text-gray-600 mb-4 body-font">{member.position}</p>
-                  
+
                   <div className="flex justify-center space-x-3">
                     <a href="#" className="w-10 h-10 bg-blue-100 hover:bg-blue-600 text-blue-600 hover:text-white rounded-full flex items-center justify-center transition-colors">
                       <span className="text-lg">f</span>
@@ -314,7 +315,7 @@ export default function AboutDub() {
               <p className="text-gray-600 mb-8 body-font">
                 {t('aboutDub.contact.description', 'Готовы обсудить ваш проект? Заполните форму и мы свяжемся с вами в ближайшее время для консультации.')}
               </p>
-              
+
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
@@ -325,7 +326,7 @@ export default function AboutDub() {
                     <p className="text-gray-600 body-font">{t('aboutDub.contact.address.value', 'г. Москва, ул. Примерная, д. 123')}</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
                     <span className="text-xl text-blue-600">📧</span>
@@ -335,7 +336,7 @@ export default function AboutDub() {
                     <p className="text-gray-600 body-font">info@rs-soft.ru</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
                     <span className="text-xl text-blue-600">📞</span>
@@ -347,7 +348,7 @@ export default function AboutDub() {
                 </div>
               </div>
             </div>
-            
+
             <div>
               <ContactForm />
             </div>
@@ -355,28 +356,14 @@ export default function AboutDub() {
         </div>
       </section>
 
-      {/* Footer-like CTA Section */}
-      <section className="py-12 bg-gradient-to-r from-blue-900 to-indigo-900 text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl text-center">
-          <h3 className="text-2xl font-bold mb-4 title-font">
-            {t('aboutDub.cta.title', 'Готовы начать сотрудничество?')}
-          </h3>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/contact"
-              className="bg-white text-blue-900 hover:bg-blue-50 font-bold py-3 px-8 rounded-lg transition-all duration-300 title-font"
-            >
-              {t('aboutDub.cta.contact', 'Связаться с нами')}
-            </Link>
-            <Link
-              to="/projects"
-              className="border-2 border-white text-white hover:border-blue-300 hover:bg-blue-300 hover:bg-opacity-20 font-bold py-3 px-8 rounded-lg transition-all duration-300 title-font"
-            >
-              {t('aboutDub.cta.portfolio', 'Посмотреть проекты')}
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* CTA Section */}
+      <CTASection
+        variant="light"
+        title={t('aboutDub.cta.title', 'Готовы начать сотрудничество?')}
+        primaryButtonText={t('aboutDub.cta.contact', 'Связаться с нами')}
+        primaryButtonLink="/contact"
+        secondaryButtonText={t('aboutDub.cta.portfolio', 'Посмотреть проекты')}
+      />
     </div>
   );
 }

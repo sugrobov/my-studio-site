@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import Carousel from '../components/Carousel';
+import CTASection from '../components/CTASection';
 
 export default function HomeDub() {
   const { t } = useTranslation();
@@ -227,30 +228,13 @@ export default function HomeDub() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 bg-gradient-to-r from-blue-900 to-indigo-900 text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 title-font">
-            {t('homeDub.cta.title')}
-          </h2>
-          <p className="text-xl text-blue-100 mb-6 max-w-3xl mx-auto body-font">
-            {t('homeDub.cta.description')}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/about"
-              className="bg-white text-blue-900 hover:bg-blue-50 font-bold py-3 px-8 rounded-lg transition-all duration-300 title-font"
-            >
-              {t('homeDub.cta.contact')}
-            </Link>
-            <Link
-              to="/projects"
-              className="border-2 border-white text-white hover:border-blue-300 hover:bg-blue-300 hover:bg-opacity-20 font-bold py-3 px-8 rounded-lg transition-all duration-300 title-font"
-            >
-              {t('homeDub.cta.portfolio')}
-            </Link>
-          </div>
-        </div>
-      </section>
+      <CTASection
+        variant="light"
+        title={t('aboutDub.cta.title', 'Готовы начать сотрудничество?')}
+        primaryButtonText={t('aboutDub.cta.contact', 'Связаться с нами')}
+        primaryButtonLink="/contact"
+        secondaryButtonText={t('aboutDub.cta.portfolio', 'Посмотреть проекты')}
+      />
     </div>
   );
 }
