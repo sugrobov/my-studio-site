@@ -5,11 +5,6 @@ export const menuItems = [
     translationKey: 'menu.home'
   },
   {
-    id: 'about',
-    path: '/about-dub',
-    translationKey: 'menu.about'
-  },
-  {
     id: 'projects',
     path: '/projects',
     translationKey: 'menu.projects'
@@ -19,9 +14,9 @@ export const menuItems = [
     path: '/services-dub',
     translationKey: 'menu.servicesDub'
   },
-/*   {
-    id: 'contact',
-    path: '/contact',
-    translationKey: 'menu.contact'
-  } */
+  {
+    id: 'about',
+    path: '/about-dub',
+    translationKey: 'menu.about'
+  },
 ];

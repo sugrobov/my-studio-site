@@ -4,14 +4,14 @@ import { initReactI18next } from 'react-i18next';
 const resources = {
   ru: {
     translation: {
-      menu: { 
-        home: "Главная", 
+      menu: {
+        home: "Главная",
         homeDub: "Главная-дубль",
         aboutDub: "О нас-дубль",
         services: "Услуги",
         servicesDub: "Услуги",
-        projects: "Наши проекты", 
-        about: "О компании" 
+        projects: "Наши проекты",
+        about: "О компании"
       },
       clear: "Очистить",
       about: {
@@ -287,19 +287,28 @@ const resources = {
         firebase: "Firebase",
         video: "Видео",
         webrtc: "WebRTC"
+      },
+      features: {
+        title: "Наши преимущества",
+        description: "Мы предоставляем полный спектр IT-услуг для развития вашего бизнеса",
+        list: [
+          "Профессиональные IT-решения для вашего бизнеса",
+          "Разработка качественного ПО",
+          "Создание современных веб-приложений"
+        ]
       }
     },
   },
   en: {
     translation: {
-      menu: { 
-        home: "Home", 
+      menu: {
+        home: "Home",
         homeDub: "Home Dub",
         aboutDub: "About Dub",
         services: "Services",
         servicesDub: "Services Dub",
-        projects: "Our Projects", 
-        about: "About" 
+        projects: "Our Projects",
+        about: "About"
       },
       search: "Search...",
       clear: "Clear",
@@ -576,6 +585,15 @@ const resources = {
         firebase: "Firebase",
         video: "Video",
         webrtc: "WebRTC"
+      },
+      features: {
+        title: "Our Advantages",
+        description: "We provide a full range of IT services for your business development",
+        list: [
+          "Professional IT solutions for your business",
+          "Quality software development",
+          "Modern web applications development"
+        ]
       }
     },
   },

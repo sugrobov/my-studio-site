@@ -229,22 +229,22 @@ export default function AboutDub() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-900 to-indigo-900 text-white">
+      <section className="py-16 bg-gradient-to-r from-blue-50 via-indigo-50 to-cyan-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {statsData.map((stat) => (
               <div key={stat.id} className="text-center">
-                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <span className="text-2xl text-white">
                     {stat.id === 1 && '👥'}
                     {stat.id === 2 && '✅'}
                     {stat.id === 3 && '👨‍💻'}
                     {stat.id === 4 && '🏆'}
                   </span>
                 </div>
-                <div className="text-4xl md:text-5xl font-bold mb-2 title-font">{stat.value}</div>
-                <div className="text-blue-100 body-font">{stat.label}</div>
-                <div className="w-12 h-1 bg-white mx-auto mt-4 rounded-full"></div>
+                <div className="text-4xl md:text-5xl font-bold mb-2 text-gray-800 title-font">{stat.value}</div>
+                <div className="text-gray-600 body-font">{stat.label}</div>
+                <div className="w-12 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 mx-auto mt-4 rounded-full"></div>
               </div>
             ))}
           </div>
@@ -255,9 +255,9 @@ export default function AboutDub() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <div className="inline-block border border-gray-300 rounded-full text-gray-600 font-medium py-1 px-4 mb-4 title-font">
+            {/* <div className="inline-block border border-gray-300 rounded-full text-gray-600 font-medium py-1 px-4 mb-4 title-font">
               {t('aboutDub.team.badge', 'Наша команда')}
-            </div>
+            </div> */}
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4 title-font">
               {t('aboutDub.team.title', 'Профессиональная команда')}
             </h2>

@@ -31,51 +31,51 @@ export default function CTASection({
   // Разные варианты дизайна в зависимости от variant
   const variants = {
     default: {
-      bg: 'bg-gradient-to-r from-cyan-600 via-blue-500 to-indigo-600',
+      bg: 'bg-gradient-to-r from-cyan-400 via-blue-300 to-indigo-400',
       titleColor: 'text-white',
-      descriptionColor: 'text-white/90',
-      primaryButton: 'bg-white text-cyan-700 hover:bg-gray-50 shadow-lg',
-      secondaryButton: 'bg-transparent border-2 border-white text-white hover:bg-white/10'
+      descriptionColor: 'text-white/95',
+      primaryButton: 'bg-white text-cyan-600 hover:bg-gray-50 shadow-lg',
+      secondaryButton: 'bg-transparent border-2 border-white text-white hover:bg-white/15'
     },
     light: {
       bg: 'bg-gradient-to-r from-gray-50 via-blue-50 to-cyan-50',
       titleColor: 'text-gray-900',
       descriptionColor: 'text-gray-700',
-      primaryButton: 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white hover:from-cyan-700 hover:to-blue-700 shadow-lg shadow-blue-500/30',
-      secondaryButton: 'bg-transparent border-2 border-cyan-600 text-cyan-600 hover:bg-cyan-50'
+      primaryButton: 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white hover:from-cyan-600 hover:to-blue-600 shadow-lg shadow-blue-400/30',
+      secondaryButton: 'bg-transparent border-2 border-cyan-500 text-cyan-500 hover:bg-cyan-50'
     },
     gradient: {
-      bg: 'bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500',
+      bg: 'bg-gradient-to-r from-blue-500 via-purple-400 to-pink-400',
       titleColor: 'text-white',
-      descriptionColor: 'text-white/90',
-      primaryButton: 'bg-white text-blue-700 hover:bg-gray-50 shadow-xl',
-      secondaryButton: 'bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white hover:bg-white/20'
+      descriptionColor: 'text-white/95',
+      primaryButton: 'bg-white text-blue-600 hover:bg-gray-50 shadow-xl',
+      secondaryButton: 'bg-white/15 backdrop-blur-sm border-2 border-white/40 text-white hover:bg-white/25'
     },
     orange: {
-      bg: 'bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500',
+      bg: 'bg-gradient-to-r from-orange-400 via-amber-300 to-yellow-300',
       titleColor: 'text-white',
-      descriptionColor: 'text-white/90',
-      primaryButton: 'bg-white text-orange-700 hover:bg-gray-50 shadow-xl',
-      secondaryButton: 'bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white hover:bg-white/20'
+      descriptionColor: 'text-white/95',
+      primaryButton: 'bg-white text-orange-600 hover:bg-gray-50 shadow-xl',
+      secondaryButton: 'bg-white/15 backdrop-blur-sm border-2 border-white/40 text-white hover:bg-white/25'
     }
   };
 
   const variantStyles = variants[variant] || variants.default;
 
   return (
-    <section className={`py-16 ${variantStyles.bg} relative overflow-hidden`}>
+    <section className={`py-10 ${variantStyles.bg} relative overflow-hidden`}>
       {/* Декоративные элементы */}
-      <div className="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full translate-x-1/3 translate-y-1/3"></div>
+      <div className="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full translate-x-1/3 translate-y-1/3"></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl text-center relative z-10">
         <div className="max-w-3xl mx-auto">
-          <h3 className={`text-3xl md:text-4xl font-bold mb-6 title-font ${variantStyles.titleColor}`}>
+          <h3 className={`text-3xl md:text-4xl font-bold mb-4 title-font ${variantStyles.titleColor}`}>
             {ctaTitle}
           </h3>
           
           {ctaDescription && (
-            <p className={`text-xl mb-8 max-w-2xl mx-auto body-font ${variantStyles.descriptionColor}`}>
+            <p className={`text-lg mb-6 max-w-2xl mx-auto body-font ${variantStyles.descriptionColor}`}>
               {ctaDescription}
             </p>
           )}
@@ -83,7 +83,7 @@ export default function CTASection({
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link
               to={primaryLink}
-              className={`font-bold py-4 px-10 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl ${variantStyles.primaryButton} title-font w-full sm:w-auto`}
+              className={`font-bold py-3 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl ${variantStyles.primaryButton} title-font w-full sm:w-auto`}
             >
               {primaryText}
               <svg className="inline-block ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -92,7 +92,7 @@ export default function CTASection({
             </Link>
             <Link
               to={secondaryLink}
-              className={`font-bold py-4 px-10 rounded-xl transition-all duration-300 hover:scale-105 ${variantStyles.secondaryButton} title-font w-full sm:w-auto`}
+              className={`font-bold py-3 px-8 rounded-xl transition-all duration-300 hover:scale-105 ${variantStyles.secondaryButton} title-font w-full sm:w-auto`}
             >
               {secondaryText}
             </Link>

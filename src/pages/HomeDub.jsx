@@ -204,25 +204,80 @@ export default function HomeDub() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-50 to-indigo-50">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2 title-font">50+</div>
-              <div className="text-gray-700 font-medium title-font">{t('homeDub.stats.projects')}</div>
+{/*           <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4 title-font">
+              {t('homeDub.stats.title', 'Наши достижения')}
+            </h2>
+            <p className="text-gray-600 text-lg body-font">
+              {t('homeDub.stats.description', 'За годы работы мы реализовали множество успешных проектов и заслужили доверие клиентов')}
+            </p>
+          </div> */}
+
+          <div className="mb-6">
+            <div className="flex flex-wrap -mx-2">
+              {/* Статистика 1 */}
+              <div className="p-2 w-full sm:w-1/2">
+                <div className="bg-gray-100 hover:bg-blue-50 rounded-lg flex p-4 h-full items-center transition-colors duration-200 border border-gray-200">
+                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center flex-shrink-0 mr-4">
+                    <span className="text-white text-lg">👥</span>
+                  </div>
+                  <div className="flex-1">
+                    <div className="text-2xl font-bold text-gray-900 title-font">50+</div>
+                    <span className="text-gray-700 font-medium">{t('homeDub.stats.projects', 'Проектов')}</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Статистика 2 */}
+              <div className="p-2 w-full sm:w-1/2">
+                <div className="bg-gray-100 hover:bg-blue-50 rounded-lg flex p-4 h-full items-center transition-colors duration-200 border border-gray-200">
+                  <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 mr-4">
+                    <span className="text-white text-lg">👤</span>
+                  </div>
+                  <div className="flex-1">
+                    <div className="text-2xl font-bold text-gray-900 title-font">30+</div>
+                    <span className="text-gray-700 font-medium">{t('homeDub.stats.clients', 'Клиентов')}</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Статистика 3 */}
+              <div className="p-2 w-full sm:w-1/2">
+                <div className="bg-gray-100 hover:bg-blue-50 rounded-lg flex p-4 h-full items-center transition-colors duration-200 border border-gray-200">
+                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0 mr-4">
+                    <span className="text-white text-lg">⏳</span>
+                  </div>
+                  <div className="flex-1">
+                    <div className="text-2xl font-bold text-gray-900 title-font">5+</div>
+                    <span className="text-gray-700 font-medium">{t('homeDub.stats.experience', 'Лет опыта')}</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Статистика 4 */}
+              <div className="p-2 w-full sm:w-1/2">
+                <div className="bg-gray-100 hover:bg-blue-50 rounded-lg flex p-4 h-full items-center transition-colors duration-200 border border-gray-200">
+                  <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-amber-500 rounded-full flex items-center justify-center flex-shrink-0 mr-4">
+                    <span className="text-white text-lg">👨‍💻</span>
+                  </div>
+                  <div className="flex-1">
+                    <div className="text-2xl font-bold text-gray-900 title-font">15+</div>
+                    <span className="text-gray-700 font-medium">{t('homeDub.stats.specialists', 'Специалистов')}</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2 title-font">30+</div>
-              <div className="text-gray-700 font-medium title-font">{t('homeDub.stats.clients')}</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2 title-font">5+</div>
-              <div className="text-gray-700 font-medium title-font">{t('homeDub.stats.experience')}</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2 title-font">15+</div>
-              <div className="text-gray-700 font-medium title-font">{t('homeDub.stats.specialists')}</div>
-            </div>
+          </div>
+          
+          <div className="text-center mt-8">
+            <Link
+              to="/projects"
+              className="inline-flex text-white bg-gradient-to-r from-blue-600 to-indigo-600 border-0 py-3 px-8 focus:outline-none hover:from-blue-700 hover:to-indigo-700 rounded-lg text-lg shadow-md hover:shadow-lg transition-all duration-300 title-font"
+            >
+              {t('homeDub.stats.button', 'Смотреть наши проекты')}
+            </Link>
           </div>
         </div>
       </section>
