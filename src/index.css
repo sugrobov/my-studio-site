@@ -71,6 +71,10 @@
   line-height: 1.6;
 }
 
+.cta-description {
+  color: white !important;
+}
+
 /* Утилиты для ограничения строк текста */
 /* .line-clamp-1 {
   overflow: hidden;

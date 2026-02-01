@@ -9,7 +9,7 @@ const resources = {
         homeDub: "Главная-дубль",
         aboutDub: "О нас-дубль",
         services: "Услуги",
-        servicesDub: "Услуги-дубль",
+        servicesDub: "Услуги",
         projects: "Наши проекты", 
         about: "О компании" 
       },

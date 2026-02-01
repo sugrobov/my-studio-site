@@ -19,9 +19,9 @@ export const menuItems = [
     path: '/services-dub',
     translationKey: 'menu.servicesDub'
   },
-  {
+/*   {
     id: 'contact',
     path: '/contact',
     translationKey: 'menu.contact'
-  }
+  } */
 ];
