@@ -296,6 +296,24 @@ const resources = {
           "Разработка качественного ПО",
           "Создание современных веб-приложений"
         ]
+      },
+      footer: {
+        quickLinks: 'Быстрые ссылки',
+        services: 'Услуги',
+        feature1: 'Профессиональные IT-решения для вашего бизнеса',
+        feature2: 'Разработка качественного ПО',
+        feature3: 'Создание современных веб-приложений',
+        feature4: 'Предоставление IT-консалтинга',
+        rights: 'Все права защищены.',
+        privacy: 'Политика конфиденциальности',
+        terms: 'Условия использования',
+        sitemap: 'Карта сайта'
+      },
+      services: {
+        web: 'Веб-разработка',
+        mobile: 'Мобильные приложения',
+        design: 'UI/UX Дизайн',
+        consulting: 'IT-Консалтинг'
       }
     },
   },
@@ -594,6 +612,24 @@ const resources = {
           "Quality software development",
           "Modern web applications development"
         ]
+      },
+      footer: {
+        quickLinks: 'Quick Links',
+        services: 'Services',
+        feature1: 'Professional IT solutions for your business',
+        feature2: 'Quality software development',
+        feature3: 'Modern web applications development',
+        feature4: 'Providing IT consulting',
+        rights: 'All rights reserved.',
+        privacy: 'Privacy Policy',
+        terms: 'Terms of Use',
+        sitemap: 'Sitemap'
+      },
+      services: {
+        web: 'Web Development',
+        mobile: 'Mobile Applications',
+        design: 'UI/UX Design',
+        consulting: 'IT Consulting'
       }
     },
   },

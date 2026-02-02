@@ -138,7 +138,7 @@ export default function AboutDub() {
             {/* Left Column - Image */}
             <div className="wow fadeInUp">
               <div className="relative overflow-hidden rounded-xl shadow-2xl">
-                <div className="aspect-w-16 aspect-h-12 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-xl flex items-center justify-center p-12">
+                <div className="aspect-w-16 aspect-h-12 bg-linear-to-r from-blue-400 to-cyan-400 rounded-xl flex items-center justify-center p-12">
                   <div className="text-center">
                     <div className="text-8xl mb-6">💻</div>
                     <h3 className="text-3xl font-bold text-white">RS-SOFT</h3>
@@ -206,11 +206,11 @@ export default function AboutDub() {
           </div>
 
           {/* Benefits Section */}
-          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8 border border-blue-100">
+          <div className="bg-linear-to-r from-blue-50 to-indigo-50 rounded-xl p-8 border border-blue-100">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {benefitsData.map((benefit) => (
                 <div key={benefit.id} className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full flex items-center justify-center">
+                  <div className="shrink-0 w-16 h-16 bg-linear-to-r from-blue-600 to-blue-800 rounded-full flex items-center justify-center">
                     <span className="text-2xl text-white">
                       {benefit.id === 1 && '✓'}
                       {benefit.id === 2 && '👥'}
@@ -229,12 +229,12 @@ export default function AboutDub() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-50 via-indigo-50 to-cyan-50">
+      <section className="py-16 bg-linear-to-r from-blue-50 via-indigo-50 to-cyan-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {statsData.map((stat) => (
               <div key={stat.id} className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <div className="w-16 h-16 bg-linear-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
                   <span className="text-2xl text-white">
                     {stat.id === 1 && '👥'}
                     {stat.id === 2 && '✅'}
@@ -244,7 +244,7 @@ export default function AboutDub() {
                 </div>
                 <div className="text-4xl md:text-5xl font-bold mb-2 text-gray-800 title-font">{stat.value}</div>
                 <div className="text-gray-600 body-font">{stat.label}</div>
-                <div className="w-12 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 mx-auto mt-4 rounded-full"></div>
+                <div className="w-12 h-1 bg-linear-to-r from-blue-400 to-cyan-400 mx-auto mt-4 rounded-full"></div>
               </div>
             ))}
           </div>
@@ -269,7 +269,7 @@ export default function AboutDub() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {teamData.map((member) => (
               <div key={member.id} className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
-                <div className="aspect-w-1 aspect-h-1 bg-gradient-to-r from-blue-100 to-indigo-100 rounded-t-xl flex items-center justify-center p-8">
+                <div className="aspect-w-1 aspect-h-1 bg-linear-to-r from-blue-100 to-indigo-100 rounded-t-xl flex items-center justify-center p-8">
                   <div className="text-8xl">{member.image}</div>
                 </div>
                 <div className="bg-white p-6 text-center">
@@ -318,7 +318,7 @@ export default function AboutDub() {
 
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center shrink-0">
                     <span className="text-xl text-blue-600">📍</span>
                   </div>
                   <div>
@@ -328,7 +328,7 @@ export default function AboutDub() {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center shrink-0">
                     <span className="text-xl text-blue-600">📧</span>
                   </div>
                   <div>
@@ -338,7 +338,7 @@ export default function AboutDub() {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center shrink-0">
                     <span className="text-xl text-blue-600">📞</span>
                   </div>
                   <div>

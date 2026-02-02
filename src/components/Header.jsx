@@ -33,17 +33,17 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-gradient-to-r from-white to-blue-50 shadow-lg shadow-blue-100/50 sticky top-0 z-50 border-b border-blue-100">
+    <header className="bg-linear-to-r from-white to-blue-50 shadow-lg shadow-blue-100/50 sticky top-0 z-50 border-b border-blue-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="flex justify-between items-center h-16">
           {/* Логотип */}
-          <div className="flex-shrink-0 flex items-center">
+          <div className="shrink-0 flex items-center">
             <NavLink to="/" className="flex items-center space-x-3 group">
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/30 group-hover:shadow-blue-500/50 transition-shadow">
+              <div className="w-10 h-10 bg-linear-to-r from-blue-600 to-cyan-500 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/30 group-hover:shadow-blue-500/50 transition-shadow">
                 <span className="text-white font-bold text-xl">RS</span>
               </div>
               <div>
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent title-font">
+                <h1 className="text-2xl font-bold bg-linear-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent title-font">
                   RS-SOFT
                 </h1>
                 <p className="text-xs text-gray-500 hidden sm:block">Digital Solutions</p>
@@ -68,7 +68,7 @@ export default function Header() {
                   <>
                     {t(item.translationKey)}
                     {isActive && (
-                      <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-8 h-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full"></span>
+                      <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-8 h-1 bg-linear-to-r from-blue-500 to-cyan-400 rounded-full"></span>
                     )}
                   </>
                 )}
@@ -150,7 +150,7 @@ export default function Header() {
                   onClick={closeMenu}
                   className={({ isActive }) =>
                     `flex items-center space-x-3 px-4 py-3 rounded-lg transition-all ${isActive
-                      ? 'bg-gradient-to-r from-blue-50 to-blue-100 text-blue-600 border border-blue-200'
+                      ? 'bg-linear-to-r from-blue-50 to-blue-100 text-blue-600 border border-blue-200'
                       : 'text-gray-700 hover:bg-blue-50 hover:text-blue-600'
                     }`
                   }
@@ -169,7 +169,7 @@ export default function Header() {
             
             {/* Инфо блок в мобильном меню */}
             <div className="mt-6 pt-4 border-t border-blue-100">
-              <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-4 border border-blue-100">
+              <div className="bg-linear-to-r from-blue-50 to-cyan-50 rounded-xl p-4 border border-blue-100">
                 <p className="text-sm text-gray-600 text-center">
                   <span className="font-medium text-blue-600">RS-SOFT</span> — IT решения для вашего бизнеса
                 </p>

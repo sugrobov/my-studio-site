@@ -61,14 +61,14 @@ export default function HomeDub() {
   return (
     <div className="home-dub">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-50 via-blue-100 to-indigo-100 py-16 md:py-24 overflow-hidden">
+      <section className="relative bg-linear-to-r from-blue-50 via-blue-100 to-indigo-100 py-16 md:py-24 overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="lg:w-1/2">
               <p className="inline-block border border-blue-600 border-opacity-30 rounded-full text-blue-900 font-medium py-1 px-4 mb-4 bg-white/50 backdrop-blur-sm title-font">
                 {t('homeDub.hero.badge')}
               </p>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent title-font">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight bg-linear-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent title-font">
                 {t('homeDub.hero.title')}
               </h1>
               <p className="text-lg md:text-xl text-gray-900 mb-8 max-w-2xl font-medium body-font">
@@ -77,7 +77,7 @@ export default function HomeDub() {
               <div className="flex flex-wrap gap-4">
                 <Link
                   to="/projects"
-                  className="bg-gradient-to-r from-blue-600 to-blue-800 text-white hover:from-blue-700 hover:to-blue-900 font-bold py-3 px-8 rounded-lg transition-all duration-300 hover:shadow-xl"
+                  className="bg-linear-to-r from-blue-600 to-blue-800 text-white hover:from-blue-700 hover:to-blue-900 font-bold py-3 px-8 rounded-lg transition-all duration-300 hover:shadow-xl"
                 >
                   {t('homeDub.hero.buttonProjects')}
                 </Link>
@@ -91,7 +91,7 @@ export default function HomeDub() {
             </div>
 
             {/* Карусель */}
-            <div className="lg:w-1/2 h-80 md:h-96 lg:h-[500px] w-full">
+            <div className="lg:w-1/2 h-80 md:h-96 lg:h-125 w-full">
               <Carousel />
             </div>
           </div>
@@ -116,7 +116,7 @@ export default function HomeDub() {
                 key={service.id}
                 className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100"
               >
-                <div className={`inline-flex p-4 rounded-lg bg-gradient-to-r ${service.color} mb-4`}>
+                <div className={`inline-flex p-4 rounded-lg bg-linear-to-r ${service.color} mb-4`}>
                   <span className="text-3xl">{service.icon}</span>
                 </div>
                 <h3 className="text-xl font-bold text-gray-800 mb-3 title-font">
@@ -144,9 +144,9 @@ export default function HomeDub() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
             <div>
-              <p className="inline-block border border-gray-300 rounded-full text-gray-600 font-medium py-1 px-4 mb-2 title-font">
+              {/* <p className="inline-block border border-gray-300 rounded-full text-gray-600 font-medium py-1 px-4 mb-2 title-font">
                 {t('homeDub.projects.badge')}
-              </p>
+              </p> */}
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 title-font">
                 {t('homeDub.projects.title')}
               </h2>
@@ -166,17 +166,17 @@ export default function HomeDub() {
             {projectsStaticData.map((project) => (
               <div key={project.id} className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500">
                 <div className={`h-48 ${project.imageClass} relative overflow-hidden`}>
-                  <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-black/10 group-hover:from-black/40 group-hover:to-black/20 transition-all duration-500"></div>
+                  {/* <div className="absolute inset-0 bg-linear-to-r from-black/30 to-black/10 group-hover:from-black/40 group-hover:to-black/20 transition-all duration-500"></div>
                   <div className="absolute top-4 right-4 bg-white bg-opacity-90 rounded-full w-12 h-12 flex items-center justify-center">
                     <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
-                  </div>
+                  </div> */}
                 </div>
-                <div className="bg-gradient-to-br from-white to-gray-50 p-6">
+                <div className="bg-linear-to-br from-white to-gray-50 p-6">
                   <div className="flex justify-between items-start">
                     <div>
-                      <span className="inline-block bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full mb-2 title-font">
+                      <span className="inline-block bg-linear-to-r from-blue-100 to-indigo-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full mb-2 title-font">
                         {t(`homeDub.projects.${project.key}.category`)}
                       </span>
                       <h3 className="text-xl font-bold text-gray-800 mb-2 title-font">
@@ -220,7 +220,7 @@ export default function HomeDub() {
               {/* Статистика 1 */}
               <div className="p-2 w-full sm:w-1/2">
                 <div className="bg-gray-100 hover:bg-blue-50 rounded-lg flex p-4 h-full items-center transition-colors duration-200 border border-gray-200">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center flex-shrink-0 mr-4">
+                  <div className="w-12 h-12 bg-linear-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center flex-shrink-0 mr-4">
                     <span className="text-white text-lg">👥</span>
                   </div>
                   <div className="flex-1">
@@ -233,7 +233,7 @@ export default function HomeDub() {
               {/* Статистика 2 */}
               <div className="p-2 w-full sm:w-1/2">
                 <div className="bg-gray-100 hover:bg-blue-50 rounded-lg flex p-4 h-full items-center transition-colors duration-200 border border-gray-200">
-                  <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 mr-4">
+                  <div className="w-12 h-12 bg-linear-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 mr-4">
                     <span className="text-white text-lg">👤</span>
                   </div>
                   <div className="flex-1">
@@ -246,7 +246,7 @@ export default function HomeDub() {
               {/* Статистика 3 */}
               <div className="p-2 w-full sm:w-1/2">
                 <div className="bg-gray-100 hover:bg-blue-50 rounded-lg flex p-4 h-full items-center transition-colors duration-200 border border-gray-200">
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0 mr-4">
+                  <div className="w-12 h-12 bg-linear-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0 mr-4">
                     <span className="text-white text-lg">⏳</span>
                   </div>
                   <div className="flex-1">
@@ -259,7 +259,7 @@ export default function HomeDub() {
               {/* Статистика 4 */}
               <div className="p-2 w-full sm:w-1/2">
                 <div className="bg-gray-100 hover:bg-blue-50 rounded-lg flex p-4 h-full items-center transition-colors duration-200 border border-gray-200">
-                  <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-amber-500 rounded-full flex items-center justify-center flex-shrink-0 mr-4">
+                  <div className="w-12 h-12 bg-linear-to-r from-orange-500 to-amber-500 rounded-full flex items-center justify-center flex-shrink-0 mr-4">
                     <span className="text-white text-lg">👨‍💻</span>
                   </div>
                   <div className="flex-1">
@@ -274,9 +274,9 @@ export default function HomeDub() {
           <div className="text-center mt-8">
             <Link
               to="/projects"
-              className="inline-flex text-white bg-gradient-to-r from-blue-600 to-indigo-600 border-0 py-3 px-8 focus:outline-none hover:from-blue-700 hover:to-indigo-700 rounded-lg text-lg shadow-md hover:shadow-lg transition-all duration-300 title-font"
+              className="inline-flex text-white bg-linear-to-r from-blue-600 to-indigo-600 border-0 py-3 px-8 focus:outline-none hover:from-blue-700 hover:to-indigo-700 rounded-lg text-lg shadow-md hover:shadow-lg transition-all duration-300 title-font"
             >
-              {t('homeDub.stats.button', 'Смотреть наши проекты')}
+              {t('home.seeAllProjects')}
             </Link>
           </div>
         </div>

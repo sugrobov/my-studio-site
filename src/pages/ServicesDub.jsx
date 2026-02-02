@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
-import CTASection from '../components/CTASection';
+// import { Link } from 'react-router-dom';
+// import CTASection from '../components/CTASection';
 
 export default function ServicesDub() {
   const { t } = useTranslation();
@@ -91,9 +91,9 @@ export default function ServicesDub() {
       <div className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <div className="inline-block border border-blue-200 rounded-full text-blue-600 font-medium py-1 px-4 mb-4 title-font">
+{/*             <div className="inline-block border border-blue-200 rounded-full text-blue-600 font-medium py-1 px-4 mb-4 title-font">
               {t('servicesDub.hero.badge')}
-            </div>
+            </div> */}
             <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 title-font">
               {t('servicesDub.hero.title')}
             </h1>
@@ -196,14 +196,14 @@ export default function ServicesDub() {
       </div>
 
       {/* Callback Section */}
-      <div className="py-16 bg-gradient-to-r from-blue-50 to-indigo-50">
+      <div className="py-16 bg-linear-to-r from-blue-50 to-indigo-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="max-w-2xl mx-auto">
             <div className="bg-white rounded-xl shadow-lg p-6 md:p-8">
               <div className="text-center mb-8">
-                <div className="inline-block border border-blue-200 rounded-full text-blue-600 font-medium py-1 px-4 mb-4 title-font">
+{/*                 <div className="inline-block border border-blue-200 rounded-full text-blue-600 font-medium py-1 px-4 mb-4 title-font">
                   {t('servicesDub.callback.badge')}
-                </div>
+                </div> */}
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4 title-font">
                   {t('servicesDub.callback.title')}
                 </h2>
@@ -212,7 +212,7 @@ export default function ServicesDub() {
               <form onSubmit={handleCallbackSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-gray-700 mb-2 title-font">
+                    <label htmlFor="name" className="block text-gray-700 mb-2 title-font">
                       {t('servicesDub.callback.form.name')}
                     </label>
                     <input
@@ -226,7 +226,7 @@ export default function ServicesDub() {
                   </div>
 
                   <div>
-                    <label className="block text-gray-700 mb-2 title-font">
+                    <label htmlFor="email" className="block text-gray-700 mb-2 title-font">
                       {t('servicesDub.callback.form.email')}
                     </label>
                     <input
@@ -240,7 +240,7 @@ export default function ServicesDub() {
                   </div>
 
                   <div>
-                    <label className="block text-gray-700 mb-2 title-font">
+                    <label htmlFor="mobile" className="block text-gray-700 mb-2 title-font">
                       {t('servicesDub.callback.form.mobile')}
                     </label>
                     <input
@@ -254,7 +254,7 @@ export default function ServicesDub() {
                   </div>
 
                   <div>
-                    <label className="block text-gray-700 mb-2 title-font">
+                    <label htmlFor="subject" className="block text-gray-700 mb-2 title-font">
                       {t('servicesDub.callback.form.subject')}
                     </label>
                     <input
@@ -269,7 +269,7 @@ export default function ServicesDub() {
                 </div>
 
                 <div>
-                  <label className="block text-gray-700 mb-2 title-font">
+                  <label htmlFor="message" className="block text-gray-700 mb-2 title-font">
                     {t('servicesDub.callback.form.message')}
                   </label>
                   <textarea
