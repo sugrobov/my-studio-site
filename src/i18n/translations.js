@@ -314,7 +314,10 @@ const resources = {
         mobile: 'Мобильные приложения',
         design: 'UI/UX Дизайн',
         consulting: 'IT-Консалтинг'
-      }
+      },
+      header: {
+        digitalSolutions: "Цифровые решения"
+      },
     },
   },
   en: {
@@ -630,6 +633,9 @@ const resources = {
         mobile: 'Mobile Applications',
         design: 'UI/UX Design',
         consulting: 'IT Consulting'
+      },
+      header: {
+        digitalSolutions: "Digital Solutions"
       }
     },
   },
