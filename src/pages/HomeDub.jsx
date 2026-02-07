@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Carousel from '../components/Carousel';
 import CTASection from '../components/CTASection';
 import ProjectCard from '../components/ProjectCard';
+import LearnMoreButton from '../components/UI/LearnMoreButton';
 import { projects } from '../data/projects';
 
 export default function HomeDub() {
@@ -121,24 +122,19 @@ export default function HomeDub() {
             {servicesStaticData.map((service) => (
               <div
                 key={service.id}
-                className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100 flex"
+                className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100 flex h-48"
               >
-                <div className={`inline-flex p-3 rounded-lg ${service.color} mr-4 flex-shrink-0`}>
-                  <span className="text-2xl">{service.icon}</span>
+                <div className={`inline-flex p-3 rounded-lg ${service.color} mr-4 shrink-0 h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 lg:h-20 lg:w-20`}>
+                  <span className="text-2xl m-auto">{service.icon}</span>
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-lg font-bold text-gray-800 mb-1 title-font">
+                <div className="flex-1 flex flex-col">
+                  <h3 className="text-lg font-bold text-gray-800 mb-1 title-font line-clamp-1">
                     {t(`homeDub.services.${service.key}.title`)}
                   </h3>
-                  <p className="text-gray-600 body-font text-sm mb-2">
+                  <p className="text-gray-600 body-font text-sm mb-2 flex-1 line-clamp-2">
                     {t(`homeDub.services.${service.key}.description`)}
                   </p>
-                  <a href="#" className="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center title-font text-xs">
-                    {t('homeDub.services.learnMore')}
-                    <svg className="ml-1 w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </a>
+                  <LearnMoreButton />
                 </div>
               </div>
             ))}

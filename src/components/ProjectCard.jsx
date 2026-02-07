@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import LearnMoreButton from './UI/LearnMoreButton';
 
 export default function ProjectCard({ project, horizontal = false }) {
   const { t, i18n } = useTranslation();
@@ -92,44 +93,38 @@ export default function ProjectCard({ project, horizontal = false }) {
         )}
         
         <div className={contentClasses}>
-          <div className="flex justify-between items-start">
-            <div>
-              <h4 className={titleClasses}><b>{project.title[currentLang]}</b></h4>
-              <p className={descriptionClasses}>{project.desc[currentLang]}</p>
+          <div className="flex justify-between items-start h-full flex-col">
+            <div className="flex-1">
+              <h4 className={`${titleClasses} line-clamp-1`}><b>{project.title[currentLang]}</b></h4>
+              <p className={`${descriptionClasses} line-clamp-2 flex-1`}>{project.desc[currentLang]}</p>
             </div>
-          </div>
-          
-          {/* Теги */}
-          <div className={tagsContainerClasses}>
-            <div className={tagsClasses}>
-              {translatedTags.slice(0, tagsToShow).map((tag, index) => (
-                <span
-                  key={index}
-                  className={tagClasses}
-                >
-                  {tag}
-                </span>
-              ))}
+            
+            {/* Теги */}
+            <div className={tagsContainerClasses}>
+              <div className={tagsClasses}>
+                {translatedTags.slice(0, tagsToShow).map((tag, index) => (
+                  <span
+                    key={index}
+                    className={tagClasses}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
 
-          {/* Нижний блок с кнопкой и статусом */}
-          <div className={bottomContainerClasses}>
-            <div className="flex items-center justify-between">
-              <Link
-                to={`/project/${project.id}`}
-                className={linkClasses}
-              >
-                {t('project.more')}
-                <svg className={linkIconClasses} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </Link>
-              
-              <div className="flex items-center text-xs text-gray-500">
-                <span className={`${statusClasses} ${project.id % 2 === 0 ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'} title-font`}>
-                  {project.id % 2 === 0 ? t('project.completed') : t('project.inProgress')}
-                </span>
+            {/* Нижний блок с кнопкой и статусом */}
+            <div className={bottomContainerClasses}>
+              <div className="flex items-center justify-between">
+                <LearnMoreButton href={`/project/${project.id}`} className="text-sm">
+                  {t('project.more')}
+                </LearnMoreButton>
+                
+                <div className="flex items-center text-xs text-gray-500">
+                  <span className={`${statusClasses} ${project.id % 2 === 0 ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'} title-font`}>
+                    {project.id % 2 === 0 ? t('project.completed') : t('project.inProgress')}
+                  </span>
+                </div>
               </div>
             </div>
           </div>

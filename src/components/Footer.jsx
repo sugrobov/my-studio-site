@@ -58,9 +58,9 @@ const Footer = () => {
             <div className="flex xl:flex-nowrap md:flex-nowrap lg:flex-wrap flex-wrap justify-center items-end md:justify-start">
               <div className="relative w-40 sm:w-auto xl:mr-4 lg:mr-0 sm:mr-4 mr-2">
                 <label htmlFor="footer-field" className="leading-7 text-sm text-gray-600">Placeholder</label>
-                <input type="text" id="footer-field" name="footer-field" className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                <input type="text" id="footer-field" name="footer-field" className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:bg-transparent focus:ring-2 focus:ring-blue-200 focus:border-blue-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
               </div>
-              <button className="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Button</button>
+              <button className="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-blue-600 border-0 py-2 px-4 focus:outline-none hover:bg-blue-700 rounded-lg shadow transition-all duration-300 text-sm font-medium title-font">Button</button>
             </div>
             <p className="text-gray-500 text-sm mt-2 md:text-left text-center">Bitters chicharrones fanny pack
               <br className="lg:block hidden" />waistcoat green juice
@@ -77,7 +77,7 @@ const Footer = () => {
             <span className="ml-3 text-xl">RS-SOFT</span>
           </a> */}
           <p className="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">© {new Date().getFullYear()} RS-SOFT —
-            <a href="https://rs-soft.ru" rel="noopener noreferrer" className="text-gray-600 ml-1" target="_blank">@rs-soft</a>
+            <Link href="https://rs-soft.ru" rel="noopener noreferrer" className="text-gray-600 ml-1">@rs-soft</Link>
           </p>
           <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
             <a className="text-gray-500">

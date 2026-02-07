@@ -327,7 +327,7 @@ const resources = {
         homeDub: "Home Dub",
         aboutDub: "About Dub",
         services: "Services",
-        servicesDub: "Services Dub",
+        servicesDub: "Services",
         projects: "Our Projects",
         about: "About"
       },
