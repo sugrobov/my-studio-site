@@ -2,6 +2,8 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import Carousel from '../components/Carousel';
 import CTASection from '../components/CTASection';
+import ProjectCard from '../components/ProjectCard';
+import { projects } from '../data/projects';
 
 export default function HomeDub() {
   const { t } = useTranslation();
@@ -11,25 +13,25 @@ export default function HomeDub() {
     {
       id: 1,
       icon: '📊',
-      color: 'from-blue-500 to-blue-700',
+      color: 'bg-gradient-to-r from-blue-500 to-blue-700',
       key: 'planning'
     },
     {
       id: 2,
       icon: '💰',
-      color: 'from-green-500 to-green-700',
+      color: 'bg-gradient-to-r from-green-500 to-green-700',
       key: 'investment'
     },
     {
       id: 3,
       icon: '💼',
-      color: 'from-purple-500 to-purple-700',
+      color: 'bg-gradient-to-r from-purple-500 to-purple-700',
       key: 'consultancy'
     },
     {
       id: 4,
       icon: '🏦',
-      color: 'from-orange-500 to-orange-700',
+      color: 'bg-gradient-to-r from-orange-500 to-orange-700',
       key: 'loans'
     }
   ];
@@ -57,6 +59,11 @@ export default function HomeDub() {
       key: 'corporate'
     }
   ];
+
+  // Функция для получения данных проекта по ID
+  const getProjectData = (id) => {
+    return projects.find(project => project.id === id) || projects[0];
+  };
 
   return (
     <div className="home-dub">
@@ -114,21 +121,21 @@ export default function HomeDub() {
             {servicesStaticData.map((service) => (
               <div
                 key={service.id}
-                className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100"
+                className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100 flex"
               >
-                <div className={`inline-flex p-4 rounded-lg bg-linear-to-r ${service.color} mb-4`}>
-                  <span className="text-3xl">{service.icon}</span>
+                <div className={`inline-flex p-3 rounded-lg ${service.color} mr-4 flex-shrink-0`}>
+                  <span className="text-2xl">{service.icon}</span>
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-3 title-font">
-                  {t(`homeDub.services.${service.key}.title`)}
-                </h3>
-                <p className="text-gray-600 body-font">
-                  {t(`homeDub.services.${service.key}.description`)}
-                </p>
-                <div className="mt-4 pt-4 border-t border-gray-100">
-                  <a href="#" className="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center title-font">
+                <div className="flex-1">
+                  <h3 className="text-lg font-bold text-gray-800 mb-1 title-font">
+                    {t(`homeDub.services.${service.key}.title`)}
+                  </h3>
+                  <p className="text-gray-600 body-font text-sm mb-2">
+                    {t(`homeDub.services.${service.key}.description`)}
+                  </p>
+                  <a href="#" className="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center title-font text-xs">
                     {t('homeDub.services.learnMore')}
-                    <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="ml-1 w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                   </a>
@@ -151,7 +158,7 @@ export default function HomeDub() {
                 {t('homeDub.projects.title')}
               </h2>
             </div>
-            <Link
+{/*             <Link
               to="/projects"
               className="mt-4 md:mt-0 bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-300 inline-flex items-center"
             >
@@ -159,44 +166,14 @@ export default function HomeDub() {
               <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-            </Link>
+            </Link> */}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+          {/* Сетка проектов */}
+          <div className="flex flex-wrap -m-2">
             {projectsStaticData.map((project) => (
-              <div key={project.id} className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500">
-                <div className={`h-48 ${project.imageClass} relative overflow-hidden`}>
-                  {/* <div className="absolute inset-0 bg-linear-to-r from-black/30 to-black/10 group-hover:from-black/40 group-hover:to-black/20 transition-all duration-500"></div>
-                  <div className="absolute top-4 right-4 bg-white bg-opacity-90 rounded-full w-12 h-12 flex items-center justify-center">
-                    <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </div> */}
-                </div>
-                <div className="bg-linear-to-br from-white to-gray-50 p-6">
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <span className="inline-block bg-linear-to-r from-blue-100 to-indigo-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full mb-2 title-font">
-                        {t(`homeDub.projects.${project.key}.category`)}
-                      </span>
-                      <h3 className="text-xl font-bold text-gray-800 mb-2 title-font">
-                        {t(`homeDub.projects.${project.key}.title`)}
-                      </h3>
-                    </div>
-                  </div>
-                  <p className="text-gray-600 mb-4 body-font">
-                    {t('homeDub.projects.description')}
-                  </p>
-                  <Link
-                    to={`/project/${project.id}`}
-                    className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium title-font"
-                  >
-                    {t('homeDub.projects.details')}
-                    <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </Link>
-                </div>
+              <div key={project.id} className="p-2 w-full">
+                <ProjectCard project={getProjectData(project.id)} horizontal={true} />
               </div>
             ))}
           </div>
@@ -271,7 +248,7 @@ export default function HomeDub() {
             </div>
           </div>
           
-          <div className="text-center mt-8">
+          <div className="text-center mt-6">
             <Link
               to="/projects"
               className="inline-flex text-white bg-linear-to-r from-blue-600 to-indigo-600 border-0 py-3 px-8 focus:outline-none hover:from-blue-700 hover:to-indigo-700 rounded-lg text-lg shadow-md hover:shadow-lg transition-all duration-300 title-font"

@@ -19,148 +19,90 @@ const Footer = () => {
     { id: 'consulting', label: t('services.consulting') },
   ];
 
-  const features = [
-    { id: 1, text: t('footer.feature1') },
-    { id: 2, text: t('footer.feature2') },
-    { id: 3, text: t('footer.feature3') },
-    { id: 4, text: t('footer.feature4') }
-  ];
-
   return (
-    <footer className="bg-linear-to-br from-gray-50 via-white to-blue-50 text-gray-800 border-t border-gray-200">
-      {/* Основной контент футера */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-        <div className="py-12">
-          {/* Верхняя часть футера */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-
-            {/* Блок с логотипом и описанием */}
-            <div className="lg:col-span-2">
-              {/* Маркированный список преимуществ */}
-              <div className="mb-6">
-                <div className="flex flex-wrap -mx-2">
-                  {features.map((feature) => (
-                    <div key={feature.id} className="p-2 w-full sm:w-1/2">
-                      <div className="bg-gray-100 hover:bg-blue-50 rounded-lg flex p-4 h-full items-center transition-colors duration-200 border border-gray-200">
-                        <svg
-                          fill="none"
-                          stroke="currentColor"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="3"
-                          className="text-blue-500 w-6 h-6 flex-shrink-0 mr-4"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
-                          <path d="M22 4L12 14.01l-3-3"></path>
-                        </svg>
-                        <span className="title-font font-medium text-gray-800">
-                          {feature.text}
-                        </span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Быстрые ссылки */}
-            <div>
-              <h3 className="text-lg font-bold text-gray-800 mb-6 pb-2 border-b border-gray-300">
-                {t('footer.quickLinks')}
-              </h3>
-              <ul className="space-y-3">
-                {quickLinks.map((link) => (
-                  <li key={link.id}>
-                    <Link
-                      to={link.path}
-                      className="text-gray-600 hover:text-blue-600 transition-colors flex items-center group"
-                    >
-                      <span className="w-2 h-2 bg-blue-400 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Услуги */}
-            <div>
-              <h3 className="text-lg font-bold text-gray-800 mb-6 pb-2 border-b border-gray-300">
-                {t('footer.services')}
-              </h3>
-              <ul className="space-y-3">
-                {services.map((service) => (
-                  <li key={service.id}>
-                    <div className="text-gray-600 hover:text-blue-600 transition-colors flex items-center group cursor-pointer">
-                      <span className="w-2 h-2 bg-cyan-400 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
-                      {service.label}
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
+    <footer className="text-gray-600 body-font mt-4">
+      <div className="container px-5 py-24 mx-auto">
+        <div className="flex flex-wrap md:text-left text-center order-first">
+          <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+            <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">{t('footer.quickLinks')}</h2>
+            <nav className="list-none mb-10">
+              {quickLinks.map((link) => (
+                <li key={link.id}>
+                  <Link to={link.path} className="text-gray-600 hover:text-gray-800">{link.label}</Link>
+                </li>
+              ))}
+            </nav>
           </div>
-
-          {/* Нижняя часть футера */}
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
-            {/* Копирайт */}
-            <div className="text-center md:text-left"></div>
-
-            {/* Социальные сети */}
-            <div className="flex items-center space-x-4">
-              <a
-                href="#"
-                className="w-10 h-10 bg-gray-100 hover:bg-blue-100 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-md border border-gray-200"
-                aria-label="Facebook"
-              >
-                <span className="text-gray-600 hover:text-blue-600 transition-colors">f</span>
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-gray-100 hover:bg-blue-100 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-md border border-gray-200"
-                aria-label="Twitter"
-              >
-                <span className="text-gray-600 hover:text-blue-600 transition-colors">𝕏</span>
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-gray-100 hover:bg-blue-100 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-md border border-gray-200"
-                aria-label="Instagram"
-              >
-                <span className="text-gray-600 hover:text-pink-600 transition-colors">ig</span>
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-gray-100 hover:bg-blue-100 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-md border border-gray-200"
-                aria-label="LinkedIn"
-              >
-                <span className="text-gray-600 hover:text-blue-700 transition-colors">in</span>
-              </a>
+          <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+            <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">{t('footer.services')}</h2>
+            <nav className="list-none mb-10">
+              {services.map((service) => (
+                <li key={service.id}>
+                  <Link to={`/`} className="text-gray-600 hover:text-gray-800">{service.label}</Link>
+                </li>
+              ))}
+            </nav>
+          </div>
+          <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+            <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">{t('footer.services')}</h2>
+            <nav className="list-none mb-10">
+              {services.map((service) => (
+                <li key={service.id}>
+                  <Link to={`/`} className="text-gray-600 hover:text-gray-800">{service.label}</Link>
+                </li>
+              ))}
+            </nav>
+          </div>
+          <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+            <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">SUBSCRIBE</h2>
+            <div className="flex xl:flex-nowrap md:flex-nowrap lg:flex-wrap flex-wrap justify-center items-end md:justify-start">
+              <div className="relative w-40 sm:w-auto xl:mr-4 lg:mr-0 sm:mr-4 mr-2">
+                <label htmlFor="footer-field" className="leading-7 text-sm text-gray-600">Placeholder</label>
+                <input type="text" id="footer-field" name="footer-field" className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+              </div>
+              <button className="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Button</button>
             </div>
+            <p className="text-gray-500 text-sm mt-2 md:text-left text-center">Bitters chicharrones fanny pack
+              <br className="lg:block hidden" />waistcoat green juice
+            </p>
           </div>
         </div>
       </div>
-
-      {/* Нижняя полоса */}
-      <div className="bg-linear-to-r from-gray-100 via-blue-50 to-gray-100 py-4 border-t border-gray-300">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
-            <p className="text-sm text-gray-500 text-center">
-              © {new Date().getFullYear()} RS-SOFT. {t('footer.rights')}
-            </p>
-            <div className="flex items-center space-x-6">
-              <Link to="/privacy" className="text-sm text-gray-600 hover:text-blue-600 transition-colors hover:underline">
-                {t('footer.privacy')}
-              </Link>
-              <Link to="/terms" className="text-sm text-gray-600 hover:text-blue-600 transition-colors hover:underline">
-                {t('footer.terms')}
-              </Link>
-              <Link to="/sitemap" className="text-sm text-gray-600 hover:text-blue-600 transition-colors hover:underline">
-                {t('footer.sitemap')}
-              </Link>
-            </div>
-          </div>
+      <div className="bg-gray-100">
+        <div className="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col">
+{/*           <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+            <span className="ml-3 text-xl">RS-SOFT</span>
+          </a> */}
+          <p className="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">© {new Date().getFullYear()} RS-SOFT —
+            <a href="https://rs-soft.ru" rel="noopener noreferrer" className="text-gray-600 ml-1" target="_blank">@rs-soft</a>
+          </p>
+          <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+            <a className="text-gray-500">
+              <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+              </svg>
+            </a>
+            <a className="ml-3 text-gray-500">
+              <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+              </svg>
+            </a>
+            <a className="ml-3 text-gray-500">
+              <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+              </svg>
+            </a>
+            <a className="ml-3 text-gray-500">
+              <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="0" className="w-5 h-5" viewBox="0 0 24 24">
+                <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                <circle cx="4" cy="4" r="2" stroke="none"></circle>
+              </svg>
+            </a>
+          </span>
         </div>
       </div>
     </footer>
